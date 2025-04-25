@@ -11,8 +11,8 @@ import {
   AiFillStar,
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
-  AiOutlineUser,
 } from "react-icons/ai";
+import { GiGraduateCap } from "react-icons/gi";
 
 import { CgFileDocument } from "react-icons/cg";
 
@@ -59,13 +59,24 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+              </Nav.Link>
+            </Nav.Item> */}
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/education"
+                className="long-label"
+                onClick={() => updateExpanded(false)}
+              >
+                <GiGraduateCap style={{ marginBottom: "2px" }} /> Education and Certifications
               </Nav.Link>
             </Nav.Item>
 

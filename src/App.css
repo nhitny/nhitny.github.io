@@ -32,7 +32,49 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+/*Đây là selector trong CSS – dùng để chọn các phần tử cụ thể cần áp dụng style. 
+Chỉ áp dụng style cho những nút navbar có className="long-label"*/
+.navbar-nav .nav-link.long-label {
+  white-space: nowrap;
+  /* Ngăn không cho xuống dòng khi văn bản quá dài.*/
+  font-size: 1.1rem;
+  /* hoặc nhỏ hơn nếu cần */
+}
+
+/*CSS cho nút chuyển đổi mode*/
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  z-index: 9999;
+  /* 🟢 Đặt thật cao để đảm bảo không bị che */
+}
+
+
+.nav-label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+  /* hoặc 1.1rem nếu muốn to hơn */
+  line-height: 1.4;
+  vertical-align: middle;
+  gap: 6px;
+  /* khoảng cách icon và chữ */
+}
+
+.nav-icon {
+  font-size: 1.2em;
+  /* hoặc điều chỉnh nếu icon quá to */
+  vertical-align: middle;
 }
