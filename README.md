@@ -1,4 +1,4 @@
-<h2 align="center">
+<!-- <h2 align="center">
   Portfolio Website - v2.0<br/>
   <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a>
 </h2>
@@ -124,4 +124,4 @@ Hy vọng hướng dẫn này sẽ giúp bạn triển khai thành công ứng d
 
 ++++++++++++++++++++
 1. trước hết là phải up load code lên hết nhánh master
-2. chạy lệnh: npm run deploy
+2. chạy lệnh: npm run deploy -->
