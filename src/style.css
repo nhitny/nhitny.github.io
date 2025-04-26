@@ -171,10 +171,7 @@ button:focus {
   padding-left: 1rem !important;
 }
 
-.navbar-nav.ms-auto {
-  margin-right: 0px;
-  /*điều chỉnh thanh navbar di chuyển sang bên phải */
-}
+
 
 
 .nav-link {
@@ -189,11 +186,12 @@ button:focus {
 
 .navbar-nav .nav-item {
   position: relative;
-  margin-left: 20px;
+  margin-left: 30px;
+  /*nhitny*/
 }
 
 .navbar-nav .nav-item a {
-  font-weight: 400;
+  font-weight: 500;
   transition: all 0.3s ease-out 0s;
   position: relative;
   z-index: 1;
@@ -794,17 +792,13 @@ button:focus {
   }
 }
 
-.fork-btn {
-  font-size: 1.1em !important;
-  padding-top: 10px !important;
-  margin-right: 0px;
-  /*cho nót fork di chuyển qua bên phải*/
-}
+
 
 .fork-btn-inner {
   line-height: 1.4em !important;
   background-color: #934cce5e !important;
-  padding: 0.25rem 1.1rem !important;
+  /* padding: 0.25rem 1.1rem !important; */
+  padding: 0.25rem 0.5rem !important;
   vertical-align: middle !important;
   text-align: center !important;
 }
@@ -817,4 +811,16 @@ button:focus {
 
 .fork-btn-inner::after {
   display: none !important;
+}
+
+.navbar-nav.ms-auto {
+  margin-right: 0px;
+  /*điều chỉnh thanh navbar di chuyển sang bên phải */
+}
+
+.fork-btn {
+  font-size: 1.1em !important;
+  padding-top: 10px !important;
+  /* margin-right: 0px; cho nót fork di chuyển qua bên phải */
+  /* margin-left: 10px; */
 }
