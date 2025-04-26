@@ -1,32 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
-/* body {
-  margin: 0;
-  font-family: "Raleway", serif !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35));
-} */
-
-
-/* Giao diện sáng (mặc định) */
-/* body {
-  background-color: #ffffff;
-  color: #000000;
-  transition: all 0.3s ease;
-} */
-
-/* Giao diện tối */
-/* body.dark {
-  background-color: #0d0d1f;
-  color: #ffffff;
-} */
-
-/* (Tùy chọn) Nền navbar khi ở dark mode */
-/* .navbar.dark {
-  background-color: #151530 !important;
-} */
-
-
 
 /* Dành cho cả sáng và tối */
 body {
