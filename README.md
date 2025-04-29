@@ -46,9 +46,6 @@ rm -rf build
 # Build lại project
 npm run build
 
-# Copy toàn bộ nội dung trong thư mục build/ ra thư mục gốc repo
-cp -r build/* .
-
 # Add, commit và push lên GitHub
 git add .
 git commit -m "Triển khai website React lên GitHub Pages"
