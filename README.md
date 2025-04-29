@@ -9,6 +9,10 @@
 
 Vì đây là **User Page**, nên cần triển khai **trực tiếp lên nhánh `master` hoặc `main`** (không sử dụng nhánh `gh-pages`).
 
+### Lưu ý quan trọng:
+Để trang web hiển thị đúng trên GitHub Pages, bạn **cần phải push thư mục `build/` lên GitHub**. Thư mục `build/` chứa các tệp tĩnh (HTML, CSS, JS) đã được tối ưu sau khi bạn chạy lệnh build.
+
+
 ### Bước 1: Cài đặt các gói phụ thuộc
 
 ```bash
@@ -51,6 +55,8 @@ git add .
 git commit -m "Triển khai website React lên GitHub Pages"
 git push origin master  
 ```
+
+
 
 ### Bước 5: Cấu hình GitHub Pages
 
