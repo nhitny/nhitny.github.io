@@ -824,3 +824,12 @@ button:focus {
   /* margin-right: 0px; cho nót fork di chuyển qua bên phải */
   /* margin-left: 10px; */
 }
+
+.logo-text {
+  font-size: 1.5rem;
+  /* Kích thước chữ */
+  font-weight: bold;
+  color: #bb5ee6;
+  /* Màu tím như logo cũ */
+  text-decoration: none;
+}

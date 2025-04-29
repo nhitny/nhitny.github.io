@@ -26,7 +26,6 @@ body.dark {
   /* nếu có background-image thì xóa ở đây */
 }
 
-
 body.dark {
   --section-background-color: none;
   --image-gradient: none;
@@ -39,8 +38,6 @@ body.dark .home-section {
   background-image: none !important;
   background-color: #0d0d1f !important;
 }
-
-
 
 body.dark {
   --text-color: #ffffff;
