@@ -57,7 +57,8 @@ Chỉ áp dụng style cho những nút navbar có className="long-label"*/
   background: transparent;
   color: inherit;
   cursor: pointer;
-  z-index: 9999; /* 🟢 Đặt thật cao để đảm bảo không bị che */
+  z-index: 9999;
+  /* 🟢 Đặt thật cao để đảm bảo không bị che */
 }
 
 
@@ -76,4 +77,76 @@ Chỉ áp dụng style cho những nút navbar có className="long-label"*/
   font-size: 1.2em;
   /* hoặc điều chỉnh nếu icon quá to */
   vertical-align: middle;
+}
+
+/* 06062025 */
+.edu-logo-img {
+  width: 220px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1.5px solid rgba(168, 85, 247);
+  box-shadow: 0 0 8px rgba(168, 85, 247);
+  transition: transform 0.2s ease-in-out;
+  margin-right: 50px;
+  overflow: hidden;
+}
+
+
+.edu-logo-img img {
+  max-width: 75%;
+  max-height: 75%;
+  object-fit: contain;
+}
+
+.edu-logo-img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(168, 85, 247, 0.2);
+  /* Bóng đậm hơn khi hover */
+}
+
+
+
+/* Card view giống ProjectCard */
+.project-card-view {
+  border-radius: 10px;
+  background-color: white;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.1);
+}
+
+.project-card-view:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(168, 85, 247, 0.2);
+}
+
+
+.edu-subtitle {
+  color: var(--text-color);
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.edu-bullet-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  color: var(--text-color);
+}
+
+.edu-bullet-list li {
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.edu-details-text {
+  color: var(--text-color);
+  font-size: 15px;
+  text-align: left;
 }

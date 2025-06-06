@@ -10,6 +10,22 @@ html {
   --imp-text-color: #c770f0;
 }
 
+/* Mặc định (chế độ sáng) */
+:root {
+  --button-bg-color: #623686;
+  /* Màu nền nút cho chế độ sáng */
+  --button-text-color: #ffffff;
+  /* Màu chữ nút cho chế độ sáng */
+}
+
+/* Chế độ tối */
+body.dark {
+  --button-bg-color: #ffffff;
+  /* Màu nền nút cho chế độ tối */
+  --button-text-color: #000000;
+  /* Màu chữ nút cho chế độ tối */
+}
+
 .purple {
   color: var(--imp-text-color) !important;
 }
@@ -72,9 +88,9 @@ button:focus {
 /* Navbar Section  */
 /* --------- */
 .sticky {
-  background-color: #1b1a2ea9 !important;
+  background-color: #000000a9 !important;
   transition: all 0.3s ease-out 0s !important;
-  box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.171) !important;
   /* backdrop-filter: blur(15px) !important; */
 }
 
@@ -472,7 +488,8 @@ button:focus {
 .footer h3 {
   font-size: 1em;
   /* color: white !important; */
-  color: var(--text-color) !important;
+  /* color: var(--text-color) !important; */
+  color: white;
 
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
@@ -832,4 +849,58 @@ button:focus {
   color: #bb5ee6;
   /* Màu tím như logo cũ */
   text-decoration: none;
+}
+
+
+
+.education-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.education-content ul li {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* 06062025 btn download cv */
+/* Mặc định (chế độ sáng) */
+:root {
+  --cv-btn-bg-color: #623686;
+  /* Màu nền nút cho chế độ sáng */
+  --cv-btn-text-color: #ffffff;
+  /* Màu chữ nút cho chế độ sáng */
+}
+
+/* Chế độ tối */
+body.dark {
+  --cv-btn-bg-color: #ffffff;
+  /* Màu nền nút cho chế độ tối */
+  --cv-btn-text-color: #000000;
+  /* Màu chữ nút cho chế độ tối */
+}
+
+/* Style cho nút Download CV */
+.download-cv-btn {
+  font-weight: bold;
+  /* In đậm chữ */
+  color: var(--cv-btn-text-color) !important;
+  /* Màu chữ theo chế độ */
+  background-color: var(--cv-btn-bg-color) !important;
+  /* Màu nền theo chế độ */
+  border: none;
+  /* Xóa viền */
+  padding: 10px 20px;
+  /* Khoảng cách bên trong nút */
+  border-radius: 5px;
+  /* Bo góc */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Hiệu ứng chuyển đổi màu */
+}
+
+.download-cv-btn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Màu nền khi hover */
+  color: var(--cv-btn-text-color);
+  /* Màu chữ khi hover */
 }

@@ -72,6 +72,11 @@ https://nhitny.github.io/
 
 ---
 
+### Run local
+```
+npm start
+```
+
 ## 🛠️ Công nghệ sử dụng
 
 - **React.js** – Thư viện JavaScript xây dựng giao diện người dùng.
@@ -83,4 +88,3 @@ https://nhitny.github.io/
 ## 📸 Demo
 
 [https://nhitny.github.io/](https://nhitny.github.io/)
-

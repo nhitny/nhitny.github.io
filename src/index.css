@@ -21,6 +21,8 @@ body {
 /* Chế độ tối */
 body.dark {
   background-color: #0d0d1f;
+  --text-color: #ffffff;
+  /*662025 */
   color: #ffffff;
   background-image: none !important;
   /* nếu có background-image thì xóa ở đây */

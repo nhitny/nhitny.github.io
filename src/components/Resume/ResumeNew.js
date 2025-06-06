@@ -21,7 +21,8 @@ function ResumeNew() {
         <Particle />
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
-            variant="primary"
+            className="download-cv-btn"
+            // variant="primary"
             href={pdf}
             target="_blank"
             style={{ maxWidth: "250px" }}
@@ -39,7 +40,8 @@ function ResumeNew() {
 
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
-            variant="primary"
+            className="download-cv-btn"
+            // variant="primary"
             href={pdf}
             target="_blank"
             style={{ maxWidth: "250px" }}

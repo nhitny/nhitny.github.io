@@ -24,7 +24,7 @@ function Home({darkMode}) {
 
               <h1 className="heading-name">
                 I'M
-                <strong className="main-name"> SOUMYAJIT BEHERA</strong>
+                <strong className="main-name"> YEN NHI</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
