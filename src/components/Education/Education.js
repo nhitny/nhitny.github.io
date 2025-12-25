@@ -105,10 +105,10 @@ import sguLogo from "../../Assets/Educations/sgu-logo.png";
 import certAIAnomaly from "../../Assets/Educations/Applications of AI for Anomaly Detection.pdf";
 import certAIAgents from "../../Assets/Educations/AI Agents Fundamentals.png";
 import certAttention from "../../Assets/Educations/Attention Mechanisms and Transformer Models Course.jpeg";
-import certGeminiEducator from "../../Assets/Educations/Gemini Certified Educator.png";
-import certGeminiFaculty from "../../Assets/Educations/Gemini Certified Faculty.png";
-import certGeminiStudent from "../../Assets/Educations/Gemini Certified University Student.png";
-import certGoogleEducator from "../../Assets/Educations/Google Certified Educator Level 1.png";
+import certGeminiEducator from "../../Assets/Educations/Gemini Certified Educator.pdf";
+import certGeminiFaculty from "../../Assets/Educations/Gemini Certified Faculty.pdf";
+import certGeminiStudent from "../../Assets/Educations/Gemini Certified University Student.pdf";
+import certGoogleEducator from "../../Assets/Educations/Google Certified Educator Level 1.pdf";
 
 function Educations() {
   return (
@@ -198,6 +198,7 @@ function Educations() {
             <ProjectCard
               imgPath={certGeminiEducator}
               isBlog={false}
+              isPdf={true}
               title="Gemini Certified Educator"
               demoLink={certGeminiEducator}
             />
@@ -207,6 +208,7 @@ function Educations() {
             <ProjectCard
               imgPath={certGeminiFaculty}
               isBlog={false}
+              isPdf={true}
               title="Gemini Certified Faculty"
               demoLink={certGeminiFaculty}
             />
@@ -216,6 +218,7 @@ function Educations() {
             <ProjectCard
               imgPath={certGeminiStudent}
               isBlog={false}
+              isPdf={true}
               title="Gemini Certified University Student"
               demoLink={certGeminiStudent}
             />
@@ -225,6 +228,7 @@ function Educations() {
             <ProjectCard
               imgPath={certGoogleEducator}
               isBlog={false}
+              isPdf={true}
               title="Google Certified Educator Level 1"
               demoLink={certGoogleEducator}
             />

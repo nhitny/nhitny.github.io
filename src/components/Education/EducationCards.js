@@ -16,38 +16,51 @@ function EducationCards(props) {
 
     return (
         <Card className="project-card-view">
-            {/* Nếu là PDF, hiển thị preview trang đầu */}
-            {props.isPdf ? (
-                <a href={props.demoLink} target="_blank" rel="noopener noreferrer">
-                    <div style={{
-                        width: '100%',
-                        height: '300px',
-                        overflow: 'hidden',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        background: '#f5f5f5'
-                    }}>
+            {/* Wrapper div để cố định kích thước media cho tất cả cards */}
+            <div style={{
+                width: '100%',
+                height: '300px', // Chiều cao cố định
+                overflow: 'hidden',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                background: '#ffffff', // Background trắng cho sạch
+                borderTopLeftRadius: '10px',
+                borderTopRightRadius: '10px'
+            }}>
+                {props.isPdf ? (
+                    <a href={props.demoLink} target="_blank" rel="noopener noreferrer" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <Document
                             file={props.imgPath}
                             onLoadSuccess={onDocumentLoadSuccess}
-                            loading={<div style={{ padding: '20px' }}>Loading PDF...</div>}
+                            loading={<div style={{ padding: '20px', color: '#000' }}>Loading Preview...</div>}
+                            className="d-flex justify-content-center align-items-center"
                         >
                             <Page
                                 pageNumber={1}
-                                width={350}
+                                height={300} // Set theo chiều cao
                                 renderTextLayer={false}
                                 renderAnnotationLayer={false}
                             />
                         </Document>
-                    </div>
-                </a>
-            ) : (
-                /* Nếu là ảnh thường, hiển thị như cũ */
-                <a href={props.ghLink || props.demoLink} target="_blank" rel="noopener noreferrer">
-                    <Card.Img variant="top" src={props.imgPath} alt="card-img" />
-                </a>
-            )}
+                    </a>
+                ) : (
+                    <a href={props.ghLink || props.demoLink} target="_blank" rel="noopener noreferrer" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <Card.Img
+                            variant="top"
+                            src={props.imgPath}
+                            alt="card-img"
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'contain', // Đảm bảo ảnh không bị méo
+                                padding: '10px',
+                                borderRadius: '10px 10px 0 0'
+                            }}
+                        />
+                    </a>
+                )}
+            </div>
 
             <Card.Body>
                 <Card.Title className="tech-font" style={{ fontWeight: 700 }}>{props.title}</Card.Title>
