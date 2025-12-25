@@ -66,7 +66,7 @@ function EducationCards(props) {
                         className="tech-font"
                     >
                         <CgWebsite /> &nbsp;
-                        {props.isPdf ? "View Certificate" : "Demo"}
+                        View Certificate
                     </Button>
                 )}
             </Card.Body>

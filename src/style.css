@@ -686,6 +686,13 @@ html.dark .theme-icon,
   border: 1px solid rgba(79, 70, 229, 0.6) !important;
 }
 
+/* Certificate card image styling */
+.project-card-view img {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+}
+
 .blog-card {
   padding-top: 50px !important;
   padding-bottom: 50px !important;
