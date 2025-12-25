@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main-nhitny.png";
+import homeLogo from "../../Assets/home-anime-tech.png";
 // import homeLogo from "../../Assets/home-main-nhitny.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
@@ -45,12 +45,14 @@ function Home({ darkMode }) {
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
-                src={homeLogo}
-                alt="home pic"
-                className="img-fluid"
-                style={{ maxHeight: "450px" }}
-              />
+              <div className="avatar-wrapper">
+                <img
+                  src={homeLogo}
+                  alt="home pic"
+                  className="img-fluid tech-avatar"
+                  style={{ maxHeight: "450px" }}
+                />
+              </div>
             </Col>
           </Row>
         </Container>

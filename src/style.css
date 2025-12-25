@@ -1291,3 +1291,26 @@ body.dark .resume-section .react-pdf__Page__canvas {
   transition: width 0.4s ease, opacity 0.4s ease;
   box-shadow: 0 0 10px rgba(168, 85, 247, 0.7);
 }
+/* Tech Avatar Animation */
+.tech-avatar {
+  filter: drop-shadow(0 0 15px rgba(132, 53, 222, 0.4));
+  animation: float-avatar 6s ease-in-out infinite;
+  transition: all 0.5s ease-in-out;
+}
+
+.tech-avatar:hover {
+  filter: drop-shadow(0 0 30px rgba(132, 53, 222, 0.8));
+  transform: scale(1.02);
+}
+
+@keyframes float-avatar {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
