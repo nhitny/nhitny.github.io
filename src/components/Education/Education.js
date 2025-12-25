@@ -166,7 +166,7 @@ function Educations() {
           Here are a few certifications I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
+          <Col md={3} className="project-card">
             <ProjectCard
               imgPath={certAIAnomaly}
               isBlog={false}
@@ -176,7 +176,7 @@ function Educations() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col md={3} className="project-card">
             <ProjectCard
               imgPath={certAIAgents}
               isBlog={false}
@@ -185,7 +185,7 @@ function Educations() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col md={3} className="project-card">
             <ProjectCard
               imgPath={certAttention}
               isBlog={false}
@@ -194,7 +194,7 @@ function Educations() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col md={3} className="project-card">
             <ProjectCard
               imgPath={certGeminiEducator}
               isBlog={false}
@@ -204,7 +204,7 @@ function Educations() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col md={3} className="project-card">
             <ProjectCard
               imgPath={certGeminiFaculty}
               isBlog={false}
@@ -214,7 +214,7 @@ function Educations() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col md={3} className="project-card">
             <ProjectCard
               imgPath={certGeminiStudent}
               isBlog={false}
@@ -224,7 +224,7 @@ function Educations() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col md={3} className="project-card">
             <ProjectCard
               imgPath={certGoogleEducator}
               isBlog={false}
