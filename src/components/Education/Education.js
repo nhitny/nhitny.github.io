@@ -99,13 +99,7 @@ import Particle from "../Particle";
 
 // Logo và hình ảnh
 import uitLogo from "../../Assets/Educations/uit-logo.png";
-import sguLogo from "../../Assets/Educations/sgu-logo.png"
-import leaf from "../../Assets/Educations/leaf.png";
-import emotion from "../../Assets/Educations/emotion.png";
-import editor from "../../Assets/Educations/codeEditor.png";
-import chatify from "../../Assets/Educations/chatify.png";
-import suicide from "../../Assets/Educations/suicide.png";
-import bitsOfCode from "../../Assets/Educations/blog.png";
+import sguLogo from "../../Assets/Educations/sgu-logo.png";
 
 // Certificates
 import certAIAnomaly from "../../Assets/Educations/Applications of AI for Anomaly Detection.pdf";
