@@ -5,7 +5,6 @@ import homeLogo from "../../Assets/home-anime-tech.png";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-import CircuitAnimation from "./CircuitAnimation";
 
 function Home({ darkMode }) {
   return (
@@ -13,8 +12,7 @@ function Home({ darkMode }) {
       <Container fluid className="home-section" id="home">
         {/* <Particle /> */}
         <Particle darkMode={darkMode} />
-        <CircuitAnimation />
-        <Container className="home-content" style={{ position: 'relative', zIndex: 2 }}>
+        <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
@@ -63,5 +61,5 @@ function Home({ darkMode }) {
     </section>
   );
 }
-export default Home;
 
+export default Home;
