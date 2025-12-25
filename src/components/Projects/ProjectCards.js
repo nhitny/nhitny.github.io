@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import { CgWebsite } from "react-icons/cg";
+import { CgWebsite, CgFileDocument } from "react-icons/cg";
 import { BsGithub } from "react-icons/bs";
 
 function ProjectCards(props) {
@@ -50,8 +50,21 @@ function ProjectCards(props) {
         {"\n"}
         {"\n"}
 
-        {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
+        {/* Paper Link Button */}
+        {props.paperLink && (
+          <Button
+            variant="primary"
+            href={props.paperLink}
+            target="_blank"
+            style={{ marginLeft: "10px" }}
+            className="tech-font"
+          >
+            <CgFileDocument /> &nbsp;
+            {"Paper"}
+          </Button>
+        )}
 
+        {/* Demo Link Button */}
         {!props.isBlog && props.demoLink && (
           <Button
             variant="primary"
