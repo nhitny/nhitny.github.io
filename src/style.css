@@ -81,6 +81,13 @@ button:focus {
   align-items: center;
 }
 
+.preloader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
 /* Panda Loader Styles */
 .panda-container {
   position: relative;
