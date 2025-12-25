@@ -44,7 +44,7 @@ function EducationCards(props) {
                 </a>
             ) : (
                 /* Nếu là ảnh thường, hiển thị như cũ */
-                <a href={props.ghLink} target="_blank" rel="noopener noreferrer">
+                <a href={props.ghLink || props.demoLink} target="_blank" rel="noopener noreferrer">
                     <Card.Img variant="top" src={props.imgPath} alt="card-img" />
                 </a>
             )}
