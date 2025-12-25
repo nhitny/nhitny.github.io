@@ -104,7 +104,7 @@ function Projects() {
               description="My personal blogging platform built to share insights and experience. Developed with Next.js and React for a fast, responsive, and SEO-friendly user experience."
               technologies={
                 <>
-                  <SiNextdotjs style={{ color: "#ffffff" }} title="Next.js" />
+                  <SiNextdotjs style={{ color: "#000000" }} title="Next.js" />
                   <SiReact style={{ color: "#61DAFB" }} title="React" />
                   <SiNodedotjs style={{ color: "#339933" }} title="Node.js" />
                 </>
