@@ -107,6 +107,15 @@ import chatify from "../../Assets/Educations/chatify.png";
 import suicide from "../../Assets/Educations/suicide.png";
 import bitsOfCode from "../../Assets/Educations/blog.png";
 
+// Certificates
+import certAIAnomaly from "../../Assets/Educations/Applications of AI for Anomaly Detection.pdf";
+import certAIAgents from "../../Assets/Educations/AI Agents Fundamentals.png";
+import certAttention from "../../Assets/Educations/Attention Mechanisms and Transformer Models Course.jpeg";
+import certGeminiEducator from "../../Assets/Educations/Gemini Certified Educator.png";
+import certGeminiFaculty from "../../Assets/Educations/Gemini Certified Faculty.png";
+import certGeminiStudent from "../../Assets/Educations/Gemini Certified University Student.png";
+import certGoogleEducator from "../../Assets/Educations/Google Certified Educator Level 1.png";
+
 function Educations() {
   return (
     <Container fluid className="project-section">
@@ -164,22 +173,67 @@ function Educations() {
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
-            <ProjectCard imgPath={chatify} isBlog={false} title="Chatify" ghLink="https://github.com/soumyajit4419/Chatify" />
+            <ProjectCard
+              imgPath={certAIAnomaly}
+              isBlog={false}
+              isPdf={true}
+              title="Applications of AI for Anomaly Detection"
+              demoLink={certAIAnomaly}
+            />
           </Col>
+
           <Col md={4} className="project-card">
-            <ProjectCard imgPath={bitsOfCode} isBlog={false} title="Bits-0f-C0de" ghLink="https://github.com/soumyajit4419/Bits-0f-C0de" />
+            <ProjectCard
+              imgPath={certAIAgents}
+              isBlog={false}
+              title="AI Agents Fundamentals"
+              demoLink={certAIAgents}
+            />
           </Col>
+
           <Col md={4} className="project-card">
-            <ProjectCard imgPath={editor} isBlog={false} title="Editor.io" ghLink="https://github.com/soumyajit4419/Editor.io" />
+            <ProjectCard
+              imgPath={certAttention}
+              isBlog={false}
+              title="Attention Mechanisms and Transformer Models"
+              demoLink={certAttention}
+            />
           </Col>
+
           <Col md={4} className="project-card">
-            <ProjectCard imgPath={leaf} isBlog={false} title="Plant AI" ghLink="https://github.com/soumyajit4419/Plant_AI" />
+            <ProjectCard
+              imgPath={certGeminiEducator}
+              isBlog={false}
+              title="Gemini Certified Educator"
+              demoLink={certGeminiEducator}
+            />
           </Col>
+
           <Col md={4} className="project-card">
-            <ProjectCard imgPath={suicide} isBlog={false} title="Ai For Social Good" ghLink="https://github.com/soumyajit4419/AI_For_Social_Good" />
+            <ProjectCard
+              imgPath={certGeminiFaculty}
+              isBlog={false}
+              title="Gemini Certified Faculty"
+              demoLink={certGeminiFaculty}
+            />
           </Col>
+
           <Col md={4} className="project-card">
-            <ProjectCard imgPath={emotion} isBlog={false} title="Face Recognition and Emotion Detection" ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection" />
+            <ProjectCard
+              imgPath={certGeminiStudent}
+              isBlog={false}
+              title="Gemini Certified University Student"
+              demoLink={certGeminiStudent}
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={certGoogleEducator}
+              isBlog={false}
+              title="Google Certified Educator Level 1"
+              demoLink={certGoogleEducator}
+            />
           </Col>
         </Row>
 
