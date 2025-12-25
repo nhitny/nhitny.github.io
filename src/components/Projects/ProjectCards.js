@@ -37,12 +37,19 @@ function ProjectCards(props) {
       ref={cardRef}
       className={`project-card-view ${isVisible ? 'project-card-visible' : 'project-card-hidden'}`}
     >
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+      {/* Removed Card.Img as requested */}
       <Card.Body>
-        <Card.Title className="tech-font" style={{ fontWeight: 700 }}>{props.title}</Card.Title>
+        <Card.Title className="tech-font" style={{ fontWeight: 700, fontSize: "1.5em", marginBottom: "15px" }}>{props.title}</Card.Title>
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
         </Card.Text>
+
+        {/* Display Technologies if provided */}
+        {props.technologies && (
+          <div style={{ marginBottom: "15px", marginTop: "15px", fontSize: "2em", display: "flex", flexWrap: "wrap", gap: "15px", justifyContent: "center" }}>
+            {props.technologies}
+          </div>
+        )}
         <Button variant="primary" href={props.ghLink} target="_blank" className="tech-font">
           <BsGithub /> &nbsp;
           {props.isBlog ? "Blog" : "GitHub"}
