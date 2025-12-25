@@ -146,7 +146,7 @@ function Educations() {
               time="2018 – 2023"
               website="https://www.sgu.edu.vn/"
               details={
-                <ul style={{ listStyleType: "none", paddingLeft: 0, marginBottom: 0, textAlign: "left" }}>
+                <ul className="edu-bullet-list">
                   <li>⚡ Studied Data Structures, Algorithms, Software Engineering</li>
                   <li>⚡ Completed projects in Web Development, Mobile, and Backend Development</li>
                 </ul>

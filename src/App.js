@@ -22,12 +22,6 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  // thêm dark mode
-  // const [darkMode, setDarkMode] = useState(false);
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
-
   const [load, updateLoad] = useState(true);
 
   useEffect(() => {
@@ -38,18 +32,6 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      console.log("🌙 Đã bật dark mode, gán class vào body");
-    } else {
-      document.body.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      console.log("☀️ Đã tắt dark mode, xoá class khỏi body");
-    }
-  }, [darkMode]);
-
 
 
 
@@ -57,25 +39,13 @@ function App() {
     <Router>
       <Preloader load={load} />
 
+
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        {/* ✅ Nút chuyển đổi giao diện Light / Dark */}
-        <button
-          className="theme-toggle"
-          onClick={() => {
-            console.log("Dark Mode click:", !darkMode);
-            setDarkMode(!darkMode);
-          }}
-        >
-          {darkMode ? "🌙" : "☀️"}
-        </button>
-
-
-
+        <div id="top-loading-bar"></div>
         <Navbar />
         <ScrollToTop />
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/" element={<Home darkMode={darkMode} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/project" element={<Projects />} />
           {/* <Route path="/about" element={<About />} /> */}
           <Route path="/education" element={<Education />} />

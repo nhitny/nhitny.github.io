@@ -47,20 +47,6 @@ Chỉ áp dụng style cho những nút navbar có className="long-label"*/
   /* hoặc nhỏ hơn nếu cần */
 }
 
-/*CSS cho nút chuyển đổi mode*/
-.theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 5rem;
-  font-size: 1.5rem;
-  border: none;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  z-index: 9999;
-  /* 🟢 Đặt thật cao để đảm bảo không bị che */
-}
-
 
 .nav-label {
   display: inline-flex;
@@ -80,6 +66,59 @@ Chỉ áp dụng style cho những nút navbar có className="long-label"*/
 }
 
 /* 06062025 */
+/* Keyframe animations */
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+
+  60% {
+    transform: scale(1.1) rotate(10deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .edu-logo-img {
   width: 220px;
   height: 140px;
@@ -90,11 +129,14 @@ Chỉ áp dụng style cho những nút navbar có className="long-label"*/
   justify-content: center;
   align-items: center;
 
-  border: 1.5px solid rgba(168, 85, 247);
-  box-shadow: 0 0 8px rgba(168, 85, 247);
-  transition: transform 0.2s ease-in-out;
+  border: 1.5px solid #4f46e5;
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.3);
+  transition: all 0.3s ease-in-out;
   margin-right: 50px;
   overflow: hidden;
+
+  /* Animation on load */
+  animation: logoEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 
@@ -102,12 +144,18 @@ Chỉ áp dụng style cho những nút navbar có className="long-label"*/
   max-width: 75%;
   max-height: 75%;
   object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .edu-logo-img:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(168, 85, 247, 0.2);
-  /* Bóng đậm hơn khi hover */
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(79, 70, 229, 0.4);
+  border-color: #9333ea;
+  animation: float 2s ease-in-out infinite;
+}
+
+.edu-logo-img:hover img {
+  transform: rotate(5deg) scale(1.1);
 }
 
 
@@ -118,12 +166,29 @@ Chỉ áp dụng style cho những nút navbar có className="long-label"*/
   background-color: white;
   color: #333;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 8px rgba(168, 85, 247, 0.1);
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.1);
+
+  /* Animation on load - alternating sides */
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.project-card-view:nth-child(even) {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.project-card-view:nth-child(1) {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.project-card-view:nth-child(2) {
+  animation-delay: 0.3s;
+  opacity: 0;
 }
 
 .project-card-view:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(168, 85, 247, 0.2);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.3);
 }
 
 
@@ -143,6 +208,60 @@ Chỉ áp dụng style cho những nút navbar có className="long-label"*/
 .edu-bullet-list li {
   margin-bottom: 6px;
   font-size: 15px;
+  /* Remove opacity 0 - keep bullets visible */
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.edu-bullet-list li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.edu-bullet-list li:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.edu-bullet-list li:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.edu-bullet-list li:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.edu-bullet-list li:nth-child(5) {
+  animation-delay: 1.0s;
+}
+
+.edu-bullet-list li:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+.edu-bullet-list li:nth-child(7) {
+  animation-delay: 1.4s;
+}
+
+.edu-bullet-list li:nth-child(8) {
+  animation-delay: 1.6s;
+}
+
+.edu-bullet-list li:nth-child(9) {
+  animation-delay: 1.8s;
+}
+
+.edu-bullet-list li:nth-child(10) {
+  animation-delay: 2.0s;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .edu-details-text {

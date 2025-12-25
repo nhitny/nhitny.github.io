@@ -1,33 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap');
+
 html {
   --section-background-color: linear-gradient(to bottom left,
-      rgba(17, 16, 16, 0.582),
-      rgba(12, 8, 24, 0.904));
+      rgba(10, 5, 20, 0.9),
+      rgba(5, 5, 10, 0.95));
 
   --image-gradient: linear-gradient(to bottom left,
       rgba(17, 16, 16, 0.678),
       rgba(12, 10, 22, 0.863));
 
-  --imp-text-color: #c770f0;
+  --imp-text-color: #9333ea;
+  /* Purple */
+  --tech-indigo: #4f46e5;
+  /* Indigo */
+  font-family: 'Outfit', sans-serif !important;
 }
 
 /* Mặc định (chế độ sáng) */
 :root {
-  --button-bg-color: #623686;
+  --button-bg-color: #4f46e5;
   /* Màu nền nút cho chế độ sáng */
   --button-text-color: #ffffff;
   /* Màu chữ nút cho chế độ sáng */
+  --text-color: #1f2937;
+  /* Màu chữ chế độ sáng */
+  --bg-color: #ffffff;
+  /* Màu nền chế độ sáng */
+  --section-bg-color: #f9fafb;
+  /* Màu nền section chế độ sáng */
 }
 
 /* Chế độ tối */
+html.dark,
 body.dark {
   --button-bg-color: #ffffff;
   /* Màu nền nút cho chế độ tối */
   --button-text-color: #000000;
   /* Màu chữ nút cho chế độ tối */
+  --text-color: #ffffff;
+  /* Màu chữ chế độ tối */
+  --bg-color: #1a1a2e;
+  /* Màu nền chế độ tối - xám đậm */
+  --section-bg-color: transparent;
+  /* Màu nền section chế độ tối */
 }
 
 .purple {
   color: var(--imp-text-color) !important;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body,
+body.dark {
+  background-image: linear-gradient(to bottom left, #1a1a2e, #16213e);
+  background-attachment: fixed;
 }
 
 button:focus {
@@ -69,30 +100,24 @@ button:focus {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #2d1950;
+  background: #1e1b4b;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(178, 121, 216, 0.959);
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
   border-radius: 12px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(222, 130, 235, 0.911);
+  background: linear-gradient(135deg, #6366f1, #a855f7);
   border-radius: 12px;
 }
 
 /* --------- */
 /* Navbar Section  */
 /* --------- */
-.sticky {
-  background-color: #000000a9 !important;
-  transition: all 0.3s ease-out 0s !important;
-  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.171) !important;
-  /* backdrop-filter: blur(15px) !important; */
-}
 
 .navbar {
   /* position: fixed !important;
@@ -106,6 +131,40 @@ button:focus {
   /* hoặc background hợp với chế độ */
 }
 
+/* Light mode navbar */
+:root .navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+:root .sticky {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(15px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(15px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out 0s !important;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Dark mode navbar */
+html.dark .navbar,
+.dark .navbar {
+  background-color: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+html.dark .sticky,
+.dark .sticky {
+  background-color: rgba(26, 26, 46, 0.85) !important;
+  backdrop-filter: blur(15px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(15px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-out 0s !important;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.171) !important;
+}
+
 .navbar-toggler {
   position: relative !important;
   background-color: transparent !important;
@@ -114,7 +173,7 @@ button:focus {
 
 .navbar-toggler span {
   display: block !important;
-  background-color: #be50f4 !important;
+  background-color: #4f46e5 !important;
   height: 4px !important;
   width: 27px !important;
   margin-top: 5px !important;
@@ -161,7 +220,15 @@ button:focus {
   .navbar {
     padding: 1rem 2rem !important;
     font-size: 1.4rem !important;
-    background-color: #181a27 !important;
+  }
+
+  html.dark .navbar,
+  .dark .navbar {
+    background-color: rgba(26, 26, 46, 0.95) !important;
+  }
+
+  :root .navbar {
+    background-color: rgba(255, 255, 255, 0.95) !important;
   }
 
   .navbar-nav .nav-item a::after {
@@ -170,7 +237,7 @@ button:focus {
 }
 
 .navbar-brand {
-  color: rgb(250, 250, 250) !important;
+  color: var(--text-color) !important;
 }
 
 .logo {
@@ -179,12 +246,20 @@ button:focus {
 }
 
 .navbar-nav .nav-link {
-  /* color: white !important; */
   color: var(--text-color) !important;
   transition: color 0.3s ease;
-
   padding-right: 1rem !important;
   padding-left: 1rem !important;
+}
+
+/* Ensure nav links are visible in both modes */
+html.dark .navbar-nav .nav-link,
+.dark .navbar-nav .nav-link {
+  color: #ffffff !important;
+}
+
+:root .navbar-nav .nav-link {
+  color: #1f2937 !important;
 }
 
 
@@ -220,7 +295,7 @@ button:focus {
   height: 5px;
   width: 0;
   border-radius: 16px;
-  background: #c95bf5;
+  background: linear-gradient(to right, #4f46e5, #9333ea);
   bottom: 1px;
   left: 0;
   z-index: -1;
@@ -229,6 +304,43 @@ button:focus {
 
 .navbar-nav .nav-item a:hover::after {
   width: 100%;
+}
+
+/* Theme Toggle Link */
+.theme-toggle-link {
+  background: transparent !important;
+  border: none !important;
+  padding: 0.8rem 1rem !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+}
+
+.theme-toggle-link:hover {
+  background: rgba(79, 70, 229, 0.1) !important;
+}
+
+.theme-icon {
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode icon color */
+html.dark .theme-icon,
+.dark .theme-icon {
+  color: #ffffff;
+}
+
+/* Light mode icon color */
+:root .theme-icon {
+  color: #1f2937;
+}
+
+.theme-toggle-link:hover .theme-icon {
+  color: #4f46e5 !important;
+  transform: rotate(20deg);
 }
 
 /* --------- */
@@ -334,18 +446,25 @@ button:focus {
 }
 
 .main-name {
-  color: #cd5ff8;
+  background: linear-gradient(to right, #4f46e5, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .Typewriter__wrapper {
   font-size: 2.2em !important;
-  color: #be6adf !important;
+  background: linear-gradient(to right, #4f46e5, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 600 !important;
+  text-shadow: none;
 }
 
 .Typewriter__cursor {
   font-size: 2.4em !important;
-  color: #b562d6 !important;
+  color: #9333ea !important;
 }
 
 @media (max-width: 767px) {
@@ -429,7 +548,7 @@ button:focus {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: #68187a;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
   transition: 0.5s;
   transform: scale(0.9);
   z-index: -1;
@@ -437,13 +556,13 @@ button:focus {
 
 .home-social-icons:hover::before {
   transform: scale(1.1);
-  box-shadow: 0 0 15px #801f95;
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.8);
 }
 
 .home-social-icons:hover {
-  color: #87209e;
-  box-shadow: 0 0 5px #87209e;
-  text-shadow: 0 0 2px #87209e;
+  color: #4f46e5;
+  box-shadow: 0 0 10px rgba(147, 51, 234, 0.6);
+  text-shadow: 0 0 2px #9333ea;
 }
 
 .social-icons {
@@ -453,17 +572,18 @@ button:focus {
 }
 
 .icon-colour {
-  color: #700c86 !important;
+  color: #4f46e5 !important;
 }
 
 /* --------- */
 /* Footer */
 /* --------- */
 .footer {
-  background-color: rgb(10, 4, 22);
+  background-color: rgb(10, 5, 20);
   bottom: 0 !important;
   padding-top: 10px !important;
   padding-bottom: 8px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-copywright {
@@ -513,7 +633,7 @@ button:focus {
   padding-top: 150px !important;
   padding-bottom: 30px !important;
   /* background-image: var(--section-background-color) !important; */
-  background-color: var(--section-bg-color, white)
+  background-color: var(--section-bg-color) !important;
 }
 
 .project-card {
@@ -528,17 +648,42 @@ button:focus {
   box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459) !important;
   /* color: white !important; */
   color: var(--text-color) !important;
-
-  background-color: transparent !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
   opacity: 0.9 !important;
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
 }
 
+/* Scroll animation states */
+.project-card-hidden {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.project-card-visible {
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+}
+
 .project-card-view:hover {
-  transform: scale(1.02) !important;
+  transform: translateY(-5px) scale(1.02) !important;
   overflow: hidden !important;
-  box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important;
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.5), 0 0 10px rgba(147, 51, 234, 0.3) !important;
+  border: 1px solid rgba(79, 70, 229, 0.6) !important;
 }
 
 .blog-card {
@@ -590,18 +735,21 @@ button:focus {
 
 .btn-primary {
   /* color: #fff !important; */
-  color: var(--text-color) !important;
-
-  background-color: #623686 !important;
-  border-color: #623686 !important;
+  color: #fff !important;
+  background-image: linear-gradient(to right, #4f46e5 0%, #9333ea 51%, #4f46e5 100%) !important;
+  background-size: 200% auto;
+  border-color: #4f46e5 !important;
+  transition: 0.5s !important;
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.4);
 }
 
 .btn-primary:hover {
   /* color: #fff !important; */
-  color: var(--text-color) !important;
-
-  background-color: #6d20c5d7 !important;
-  border-color: #6d20c5d7 !important;
+  color: #fff !important;
+  background-position: right center !important;
+  border-color: #9333ea !important;
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.6);
+  transform: scale(1.05);
 }
 
 .btn:focus {
@@ -636,12 +784,12 @@ button:focus {
   margin: 15px !important;
   padding: 10px !important;
   opacity: 0.93 !important;
-  border: 1.7px solid rgba(200, 137, 230, 0.637) !important;
+  border: 1.7px solid rgba(79, 70, 229, 0.5) !important;
   vertical-align: middle !important;
   text-align: center !important;
   border-radius: 5px !important;
   display: table !important;
-  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
+  box-shadow: 4px 5px 4px 3px rgba(79, 70, 229, 0.15) !important;
   overflow: hidden !important;
   transition: all 0.4s ease 0s !important;
 }
@@ -655,7 +803,7 @@ button:focus {
 .tech-icons:hover {
   transform: scale(1.05) !important;
   overflow: hidden !important;
-  border: 2.2px solid rgba(197, 115, 230, 0.883) !important;
+  border: 2.2px solid rgba(147, 51, 234, 0.8) !important;
 }
 
 .tech-icon-images {
@@ -732,14 +880,14 @@ button:focus {
 .resume .resume-item {
   padding: 0 0 10px 25px;
   margin-top: -2px;
-  border-left: 2px solid #8a49a8;
+  border-left: 2px solid #4f46e5;
   position: relative;
 }
 
 .resume .resume-item .resume-title {
   line-height: 18px;
   font-size: 0.9em;
-  background: #5234795d;
+  background: rgba(79, 70, 229, 0.2);
   padding: 8px 15px;
   display: inline-block;
   font-weight: 600;
@@ -769,7 +917,7 @@ button:focus {
   left: -9px;
   top: 0;
   background: #fff;
-  border: 2px solid #8a49a8;
+  border: 2px solid #4f46e5;
 }
 
 .like-item {
@@ -779,8 +927,8 @@ button:focus {
 }
 
 .like-btn {
-  background-color: #934cce5e !important;
-  border-color: #934cce5e !important;
+  background-color: rgba(79, 70, 229, 0.3) !important;
+  border-color: rgba(79, 70, 229, 0.5) !important;
   padding: 0.25rem 0.98rem !important;
   border-radius: 5px !important;
   line-height: 1.4 !important;
@@ -789,8 +937,8 @@ button:focus {
 
 .like-btn:hover {
   transform: translateY(-2px) !important;
-  background-color: #a24dd386 !important;
-  border-color: #a24dd386 !important;
+  background-color: rgba(147, 51, 234, 0.4) !important;
+  border-color: rgba(147, 51, 234, 0.6) !important;
 }
 
 .animate-like {
@@ -811,19 +959,69 @@ button:focus {
 
 
 
-.fork-btn-inner {
+.fork-btn .fork-btn-inner,
+.fork-btn-inner.btn,
+.fork-btn-inner.btn-primary {
   line-height: 1.4em !important;
-  background-color: #934cce5e !important;
   /* padding: 0.25rem 1.1rem !important; */
   padding: 0.25rem 0.5rem !important;
   vertical-align: middle !important;
   text-align: center !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid !important;
 }
 
-.fork-btn-inner:hover {
+/* Dark mode fork button */
+html.dark .fork-btn .fork-btn-inner,
+html.dark .fork-btn-inner.btn,
+html.dark .fork-btn-inner.btn-primary,
+.dark .fork-btn .fork-btn-inner,
+.dark .fork-btn-inner.btn,
+.dark .fork-btn-inner.btn-primary {
+  background-color: rgba(79, 70, 229, 0.3) !important;
+  background-image: none !important;
+  border-color: rgba(79, 70, 229, 0.5) !important;
+  color: #ffffff !important;
+}
+
+html.dark .fork-btn .fork-btn-inner:hover,
+html.dark .fork-btn-inner.btn:hover,
+html.dark .fork-btn-inner.btn-primary:hover,
+.dark .fork-btn .fork-btn-inner:hover,
+.dark .fork-btn-inner.btn:hover,
+.dark .fork-btn-inner.btn-primary:hover {
   transform: translateY(-2px) !important;
-  background-color: #a24dd386 !important;
-  border-color: #a24dd386 !important;
+  background-color: rgba(147, 51, 234, 0.4) !important;
+  background-image: none !important;
+  border-color: rgba(147, 51, 234, 0.6) !important;
+  color: #ffffff !important;
+}
+
+/* Light mode fork button */
+:root .fork-btn .fork-btn-inner,
+:root .fork-btn-inner.btn,
+:root .fork-btn-inner.btn-primary,
+body:not(.dark) .fork-btn .fork-btn-inner,
+body:not(.dark) .fork-btn-inner.btn,
+body:not(.dark) .fork-btn-inner.btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #9333ea) !important;
+  background-image: linear-gradient(135deg, #4f46e5, #9333ea) !important;
+  border-color: #4f46e5 !important;
+  color: #ffffff !important;
+}
+
+:root .fork-btn .fork-btn-inner:hover,
+:root .fork-btn-inner.btn:hover,
+:root .fork-btn-inner.btn-primary:hover,
+body:not(.dark) .fork-btn .fork-btn-inner:hover,
+body:not(.dark) .fork-btn-inner.btn:hover,
+body:not(.dark) .fork-btn-inner.btn-primary:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(135deg, #6366f1, #a855f7) !important;
+  background-image: linear-gradient(135deg, #6366f1, #a855f7) !important;
+  border-color: #9333ea !important;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3) !important;
+  color: #ffffff !important;
 }
 
 .fork-btn-inner::after {
@@ -844,10 +1042,11 @@ button:focus {
 
 .logo-text {
   font-size: 1.5rem;
-  /* Kích thước chữ */
   font-weight: bold;
-  color: #bb5ee6;
-  /* Màu tím như logo cũ */
+  background: linear-gradient(to right, #4f46e5, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-decoration: none;
 }
 
@@ -903,4 +1102,185 @@ body.dark {
   /* Màu nền khi hover */
   color: var(--cv-btn-text-color);
   /* Màu chữ khi hover */
+}
+
+/* --- TECH / FUTURISTIC THEME ADDITIONS --- */
+
+/* Tech Font Utility */
+.tech-font {
+  font-family: 'Fira Code', monospace !important;
+}
+
+/* Terminal Window Style */
+.terminal-window {
+  background: rgba(26, 26, 46, 0.6);
+  /* Glassmorphism dark bg */
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1),
+    0 0 15px rgba(79, 70, 229, 0.2);
+  /* Subtle glow */
+  border: 1px solid rgba(79, 70, 229, 0.3);
+  /* Tech border */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0;
+  margin-top: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Light mode terminal adjustment */
+:root .terminal-window {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.terminal-window:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(147, 51, 234, 0.4);
+  /* Stronger glow on hover */
+  border-color: rgba(147, 51, 234, 0.5);
+}
+
+.terminal-header {
+  background: rgba(100, 100, 100, 0.1);
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+.terminal-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.terminal-btn.red {
+  background-color: #ff5f56;
+}
+
+.terminal-btn.yellow {
+  background-color: #ffbd2e;
+}
+
+.terminal-btn.green {
+  background-color: #27c93f;
+}
+
+.terminal-title {
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin-left: 15px;
+}
+
+.terminal-body {
+  padding: 20px;
+}
+
+/* Tech Text Glow */
+.tech-glow {
+  text-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
+}
+
+/* Home Name Enhancements */
+.heading-name .main-name {
+  background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Fira Code', monospace;
+  /* Use tech font */
+  font-weight: 700;
+  letter-spacing: -1px;
+  position: relative;
+  display: inline-block;
+  padding-left: 15px;
+  /* Added spacing */
+}
+
+/* Blinking cursor effect for name (optional) */
+.heading-name .main-name::after {
+  content: '_';
+  display: inline-block;
+  color: #a855f7;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Tech Grid Overlay */
+.App {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.App::before {
+  content: "";
+  position: fixed;
+  /* Fixed to stay while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* Let clicks pass through */
+  background-image:
+    linear-gradient(rgba(120, 120, 120, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 120, 120, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 0;
+}
+
+/* Ensure content is above grid */
+.home-section,
+.project-section,
+.about-section,
+.resume-section,
+.footer,
+.navbar {
+  position: relative;
+  z-index: 10;
+}
+
+/* --- RESUME DARK MODE --- */
+/* Invert PDF canvas colors in dark mode */
+body.dark .resume-section .react-pdf__Page__canvas {
+  filter: invert(1) hue-rotate(180deg) contrast(0.9);
+  border-radius: 4px;
+  transition: filter 0.5s ease;
+}
+
+/* Add shadow to PDF pages */
+.resume-section .react-pdf__Page {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+/* --- TOP LOADING BAR --- */
+#top-loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+  z-index: 99999;
+  width: 0%;
+  transition: width 0.4s ease, opacity 0.4s ease;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.7);
 }

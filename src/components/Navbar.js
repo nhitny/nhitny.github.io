@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -12,12 +12,28 @@ import {
   AiOutlineFundProjectionScreen,
 } from "react-icons/ai";
 import { GiGraduateCap } from "react-icons/gi";
+import { FiSun, FiMoon } from "react-icons/fi";
 
 import { CgFileDocument } from "react-icons/cg";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    // Load theme from localStorage
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    setTheme(savedTheme);
+    document.documentElement.classList.toggle("dark", savedTheme === "dark");
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+  };
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -107,17 +123,33 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              {/* <Nav.Link
-                href="https://soumyajitblogs.vercel.app/"
+              <Nav.Link
+                href={`https://nhitny-blogs.vercel.app/?theme=${theme}`}
                 target="_blank"
                 rel="noreferrer"
               >
                 <ImBlog style={{ marginBottom: "2px" }} /> Blogs
-              </Nav.Link> */}
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as="button"
+                onClick={toggleTheme}
+                className="theme-toggle-link"
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? (
+                  <FiSun className="theme-icon" />
+                ) : (
+                  <FiMoon className="theme-icon" />
+                )}
+              </Nav.Link>
             </Nav.Item>
 
             <Nav.Item className="fork-btn">
               <Button
+                variant="primary"
                 href="https://github.com/nhitny"
                 target="_blank"
                 className="fork-btn-inner"
