@@ -76,9 +76,64 @@ button:focus {
   height: 100%;
   z-index: 999999;
   background-color: #0c0513;
-  background-image: url(./Assets/pre.svg);
-  background-repeat: no-repeat;
-  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#preloader .loader {
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border-top: 5px solid #e74c3c;
+  position: relative;
+  animation: load 2s linear infinite;
+}
+
+#preloader .loader::before,
+#preloader .loader::after {
+  content: '';
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+#preloader .loader::before {
+  border-top: 5px solid #e67e22;
+  transform: rotate(120deg);
+}
+
+#preloader .loader::after {
+  border-top: 5px solid #3498db;
+  transform: rotate(240deg);
+}
+
+#preloader .loader span {
+  position: absolute;
+  font-size: small;
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  text-align: center;
+  line-height: 100px;
+  animation: a2 2s linear infinite;
+}
+
+@keyframes load {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes a2 {
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
 #preloader-none {
@@ -1291,6 +1346,7 @@ body.dark .resume-section .react-pdf__Page__canvas {
   transition: width 0.4s ease, opacity 0.4s ease;
   box-shadow: 0 0 10px rgba(168, 85, 247, 0.7);
 }
+
 /* Tech Avatar Animation */
 .tech-avatar {
   filter: drop-shadow(0 0 15px rgba(132, 53, 222, 0.4));
@@ -1307,9 +1363,11 @@ body.dark .resume-section .react-pdf__Page__canvas {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
+
   100% {
     transform: translateY(0px);
   }
