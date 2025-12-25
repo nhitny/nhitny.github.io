@@ -32,10 +32,10 @@ function Projects() {
               description="DFAT: Dual-stage Fusion of Acoustic and Text feature for Speech Emotion Recognition. Implemented a novel approach combining audio and text features to improve emotion recognition accuracy using Python and PyTorch. Published at VLSP 2025."
               technologies={
                 <>
-                  <SiPython title="Python" />
-                  <SiPytorch title="PyTorch" />
-                  <BsFileEarmarkMusic title="Audio Processing" />
-                  <SiNumpy title="Numpy" />
+                  <SiPython style={{ color: "#3776AB" }} title="Python" />
+                  <SiPytorch style={{ color: "#EE4C2C" }} title="PyTorch" />
+                  <BsFileEarmarkMusic style={{ color: "#1DB954" }} title="Audio Processing" />
+                  <SiNumpy style={{ color: "#4DABCF" }} title="Numpy" />
                 </>
               }
               ghLink="https://github.com/nhitny/dfat"
@@ -51,10 +51,10 @@ function Projects() {
               description="A Recommendation System designed to suggest relevant jobs and courses utilizing Data Mining techniques. Built with Python, Scikit-learn, and Pandas to analyze user behavior and preferences."
               technologies={
                 <>
-                  <SiPython title="Python" />
-                  <SiScikitlearn title="Scikit-learn" />
-                  <SiPandas title="Pandas" />
-                  <SiMysql title="MySQL" />
+                  <SiPython style={{ color: "#3776AB" }} title="Python" />
+                  <SiScikitlearn style={{ color: "#F7931E" }} title="Scikit-learn" />
+                  <SiPandas style={{ color: "#E70488" }} title="Pandas" />
+                  <SiMysql style={{ color: "#00758F" }} title="MySQL" />
                 </>
               }
               ghLink="https://github.com/nhitny/Data-Mining-Job-Course-RecSys"
@@ -69,10 +69,10 @@ function Projects() {
               description="An intelligent system for indexing and retrieving images based on textual content using Optical Character Recognition (OCR). Leverages OpenCV and Deep Learning models for accurate text extraction."
               technologies={
                 <>
-                  <SiPython title="Python" />
-                  <SiOpencv title="OpenCV" />
-                  <SiTensorflow title="TensorFlow" />
-                  <SiDocker title="Docker" />
+                  <SiPython style={{ color: "#3776AB" }} title="Python" />
+                  <SiOpencv style={{ color: "#5C3EE8" }} title="OpenCV" />
+                  <SiTensorflow style={{ color: "#FF6F00" }} title="TensorFlow" />
+                  <SiDocker style={{ color: "#2496ED" }} title="Docker" />
                 </>
               }
               ghLink="https://github.com/nhitny/ocr-text-image-retrieval"
@@ -87,9 +87,9 @@ function Projects() {
               description="Reproduction and experimental study of the MoCL (Momentum Contrast Learning) paper presented at NAACL 2024. Explores contrastive learning frameworks for NLP tasks using PyTorch."
               technologies={
                 <>
-                  <SiPython title="Python" />
-                  <SiPytorch title="PyTorch" />
-                  <SiNumpy title="Numpy" />
+                  <SiPython style={{ color: "#3776AB" }} title="Python" />
+                  <SiPytorch style={{ color: "#EE4C2C" }} title="PyTorch" />
+                  <SiNumpy style={{ color: "#4DABCF" }} title="Numpy" />
                 </>
               }
               ghLink="https://github.com/nhitny/MoCL-NAACL2024-reproduction"
@@ -104,9 +104,9 @@ function Projects() {
               description="My personal blogging platform built to share insights and experience. Developed with Next.js and React for a fast, responsive, and SEO-friendly user experience."
               technologies={
                 <>
-                  <SiNextdotjs title="Next.js" />
-                  <SiReact title="React" />
-                  <SiNodedotjs title="Node.js" />
+                  <SiNextdotjs style={{ color: "#ffffff" }} title="Next.js" />
+                  <SiReact style={{ color: "#61DAFB" }} title="React" />
+                  <SiNodedotjs style={{ color: "#339933" }} title="Node.js" />
                 </>
               }
               ghLink="https://github.com/nhitny/nhitny-blogs"

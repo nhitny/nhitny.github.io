@@ -38,7 +38,7 @@ function ProjectCards(props) {
       className={`project-card-view ${isVisible ? 'project-card-visible' : 'project-card-hidden'}`}
     >
       {/* Removed Card.Img as requested */}
-      <Card.Body>
+      <Card.Body style={{ display: "flex", flexDirection: "column" }}>
         <Card.Title className="tech-font" style={{ fontWeight: 700, fontSize: "1.5em", marginBottom: "15px" }}>{props.title}</Card.Title>
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
@@ -50,40 +50,40 @@ function ProjectCards(props) {
             {props.technologies}
           </div>
         )}
-        <Button variant="primary" href={props.ghLink} target="_blank" className="tech-font">
-          <BsGithub /> &nbsp;
-          {props.isBlog ? "Blog" : "GitHub"}
-        </Button>
-        {"\n"}
-        {"\n"}
 
-        {/* Paper Link Button */}
-        {props.paperLink && (
-          <Button
-            variant="primary"
-            href={props.paperLink}
-            target="_blank"
-            style={{ marginLeft: "10px" }}
-            className="tech-font"
-          >
-            <CgFileDocument /> &nbsp;
-            {"Paper"}
+        {/* Buttons Section - Pushed to bottom */}
+        <div style={{ marginTop: "auto", display: "flex", justifyContent: "center", gap: "10px", flexWrap: "wrap", paddingTop: "10px" }}>
+          <Button variant="primary" href={props.ghLink} target="_blank" className="tech-font">
+            <BsGithub /> &nbsp;
+            {props.isBlog ? "Blog" : "GitHub"}
           </Button>
-        )}
 
-        {/* Demo Link Button */}
-        {!props.isBlog && props.demoLink && (
-          <Button
-            variant="primary"
-            href={props.demoLink}
-            target="_blank"
-            style={{ marginLeft: "10px" }}
-            className="tech-font"
-          >
-            <CgWebsite /> &nbsp;
-            {"Demo"}
-          </Button>
-        )}
+          {/* Paper Link Button */}
+          {props.paperLink && (
+            <Button
+              variant="primary"
+              href={props.paperLink}
+              target="_blank"
+              className="tech-font"
+            >
+              <CgFileDocument /> &nbsp;
+              {"Paper"}
+            </Button>
+          )}
+
+          {/* Demo Link Button */}
+          {!props.isBlog && props.demoLink && (
+            <Button
+              variant="primary"
+              href={props.demoLink}
+              target="_blank"
+              className="tech-font"
+            >
+              <CgWebsite /> &nbsp;
+              {"Demo"}
+            </Button>
+          )}
+        </div>
       </Card.Body>
     </Card>
   );
