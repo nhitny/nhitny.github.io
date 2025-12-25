@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import anime from 'animejs/lib/anime.es.js';
+import * as anime from 'animejs';
 
 const CircuitAnimation = () => {
     const containerRef = useRef(null);
