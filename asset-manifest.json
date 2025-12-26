@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c3e9eca4.css",
+    "main.js": "/static/js/main.b92f618c.js",
+    "static/js/415.4d6acbeb.chunk.js": "/static/js/415.4d6acbeb.chunk.js",
+    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/nhi_chibi.svg": "/static/media/nhi_chibi.c8b99f4e91fbbe66f0c5576bda611945.svg",
+    "static/media/Gemini Certified University Student.pdf": "/static/media/Gemini Certified University Student.d1752b84d2103b35aea4.pdf",
+    "static/media/Gemini Certified Educator.pdf": "/static/media/Gemini Certified Educator.6c57d92b420c7945bca3.pdf",
+    "static/media/Attention Mechanisms and Transformer Models Course.jpeg": "/static/media/Attention Mechanisms and Transformer Models Course.de03c2fcaad03587dff6.jpeg",
+    "static/media/Google Certified Educator Level 1.pdf": "/static/media/Google Certified Educator Level 1.20457e9c8776f37b83b5.pdf",
+    "static/media/AI Agents Fundamentals.png": "/static/media/AI Agents Fundamentals.5ac26652e550f43c6b31.png",
+    "static/media/CV_Nhitny.pdf": "/static/media/CV_Nhitny.d763202631004558e2a4.pdf",
+    "static/media/sgu-logo.png": "/static/media/sgu-logo.b8bd97af09d401ebc316.png",
+    "static/media/uit-logo.png": "/static/media/uit-logo.0aed37ef086d015c565e.png",
+    "static/media/Gemini Certified Faculty.pdf": "/static/media/Gemini Certified Faculty.9928e400ffc357d0f696.pdf",
+    "static/media/Applications of AI for Anomaly Detection.pdf": "/static/media/Applications of AI for Anomaly Detection.739cd1d3846bdedd6bfa.pdf",
+    "index.html": "/index.html",
+    "main.c3e9eca4.css.map": "/static/css/main.c3e9eca4.css.map",
+    "main.b92f618c.js.map": "/static/js/main.b92f618c.js.map",
+    "415.4d6acbeb.chunk.js.map": "/static/js/415.4d6acbeb.chunk.js.map",
+    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3e9eca4.css",
+    "static/js/main.b92f618c.js"
+  ]
+}
