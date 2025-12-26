@@ -9,7 +9,6 @@ import {
   SiOpencv, SiNextdotjs, SiReact, SiNodedotjs,
   SiNumpy, SiMysql, SiTensorflow, SiDocker
 } from "react-icons/si";
-import { DiJava } from "react-icons/di";
 import { BsFileEarmarkMusic } from "react-icons/bs";
 
 function Projects() {

@@ -1,16 +1,15 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-anime-tech.png";
+import homeLogo from "../../Assets/nhi_chibi.svg";
 // import homeLogo from "../../Assets/home-main-nhitny.svg";
 import Particle from "../Particle";
 
 import Type from "./Type";
 import { HiOutlineMail } from "react-icons/hi";
-import myImg from "../../Assets/avatar-women.svg";
-import Tilt from "react-parallax-tilt";
+// import myImg from "../../Assets/avatar-women.svg";
+// import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
-  AiOutlineTwitter,
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -54,12 +53,15 @@ function Home({ darkMode }) {
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
-              <div className="avatar-wrapper">
+              <div className="avatar-wrapper" style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                {/* Oval Background Effect */}
+                <div className="oval-background"></div>
+
                 <img
                   src={homeLogo}
                   alt="home pic"
                   className="img-fluid tech-avatar"
-                  style={{ maxHeight: "450px" }}
+                  style={{ maxHeight: "450px", position: "relative", zIndex: 1 }}
                 />
               </div>
             </Col>
@@ -68,12 +70,12 @@ function Home({ darkMode }) {
       </Container>
       <Container fluid className="home-about-section" id="about">
         <Container>
-          <Row>
-            <Col md={8} className="home-about-description">
-              <h1 style={{ fontSize: "2.6em" }}>
+          <Row className="justify-content-center">
+            <Col md={10} lg={8} className="home-about-description">
+              <h1 style={{ fontSize: "2.6em", textAlign: "center" }}>
                 LET ME <span className="purple"> INTRODUCE </span> MYSELF
               </h1>
-              <p className="home-about-body">
+              <p className="home-about-body" style={{ textAlign: "justify" }}>
                 I am an <b className="purple">AI Engineer</b> specializing in <b className="purple">NLP, RAG, and Large Language Models (LLMs)</b>.
                 <br />
                 Currently, I am pursuing my <b className="purple">Master's degree in Computer Science</b> at the <b className="purple">University of Information Technology (UIT) - VNUHCM</b>.
@@ -84,17 +86,19 @@ function Home({ darkMode }) {
                 <i>
                   🔸 <b className="purple">AI & Data Science: </b> Python, PyTorch, RAG pipelines, and LLM fine-tuning.
                   <br />
+                  🔸 <b className="purple">Machine Learning: </b> Building and deploying ML models for NLP tasks, including sentiment analysis, text classification, and named entity recognition.
+                  <br />
+                  🔸 <b className="purple">Deep Learning Frameworks: </b> Expertise in TensorFlow and PyTorch for developing neural networks and transformer-based architectures.
+                  <br />
                   🔸 <b className="purple">Creative Coding & IoT: </b> Experience with <b className="purple">Arduino</b> and <b className="purple">Scratch</b> for interactive projects.
                 </i>
                 <br />
                 <br />
-                I am passionate about researching and building intelligent systems that can process and understand human language, applying AI to solve real-world problems.
+                I am passionate about researching and building intelligent systems that can process and understand human language, applying AI to solve real-world problems. My work focuses on creating scalable solutions that bridge the gap between cutting-edge research and practical applications.
+                <br />
+                <br />
+                Beyond technical skills, I enjoy collaborating with cross-functional teams, mentoring junior developers, and staying updated with the latest advancements in AI and machine learning.
               </p>
-            </Col>
-            <Col md={4} className="myAvtar">
-              <Tilt>
-                <img src={myImg} className="img-fluid" alt="avatar" style={{ maxWidth: "60%", height: "auto", transform: "translateY(-60px)" }} />
-              </Tilt>
             </Col>
           </Row>
           <Row>

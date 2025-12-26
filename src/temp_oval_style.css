@@ -1,0 +1,47 @@
+/* Animated Oval Background */
+.oval-background {
+      position: absolute;
+      width: 400px;
+      height: 500px;
+      /* Oval shape */
+      background: linear-gradient(45deg,
+                  rgba(79, 70, 229, 0.4),
+                  /* Indigo */
+                  rgba(147, 51, 234, 0.4),
+                  /* Purple */
+                  rgba(236, 72, 153, 0.4)
+                  /* Pink */
+            );
+      border-radius: 50%;
+      /* Makes it circular/oval */
+      filter: blur(40px);
+      /* Soft glow effect */
+      animation: ovalPulse 6s ease-in-out infinite alternate;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      z-index: 0;
+      /* Behind the image */
+      opacity: 0.8;
+}
+
+@keyframes ovalPulse {
+      0% {
+            transform: scale(0.9) rotate(0deg);
+            opacity: 0.6;
+            filter: blur(30px);
+      }
+
+      50% {
+            transform: scale(1.1) rotate(5deg);
+            opacity: 0.8;
+            filter: blur(45px) hue-rotate(20deg);
+            /* Color shift */
+      }
+
+      100% {
+            transform: scale(1.0) rotate(-5deg);
+            opacity: 0.7;
+            filter: blur(35px) hue-rotate(-20deg);
+      }
+}

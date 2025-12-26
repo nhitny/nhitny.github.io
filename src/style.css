@@ -37,12 +37,12 @@ body.dark {
   /* Màu nền nút cho chế độ tối */
   --button-text-color: #000000;
   /* Màu chữ nút cho chế độ tối */
-  --text-color: #ffffff;
-  /* Màu chữ chế độ tối */
-  --bg-color: #1a1a2e;
-  /* Màu nền chế độ tối - xám đậm */
-  --section-bg-color: transparent;
-  /* Màu nền section chế độ tối */
+  --text-color: #f0f0f0;
+  /* Màu chữ chế độ tối - sáng hơn để dễ đọc */
+  --bg-color: #0f0f1e;
+  /* Màu nền chế độ tối - tối hơn để tăng contrast */
+  --section-bg-color: rgba(255, 255, 255, 0.02);
+  /* Màu nền section chế độ tối - nhẹ nhàng */
 }
 
 .purple {
@@ -53,11 +53,14 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  overflow-y: overlay;
+  /* Allows scroll but keeping layout */
 }
 
 html.dark body,
 body.dark {
-  background-image: linear-gradient(to bottom left, #1a1a2e, #16213e);
+  background-image: linear-gradient(to bottom left, #0f0f1e, #1a1a2e);
   background-attachment: fixed;
 }
 
@@ -745,13 +748,27 @@ html.dark .theme-icon,
 
 }
 
+/* --------- */
+/* Three.js Canvas */
+/* --------- */
+.three-canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+
 .home-header {
   padding-top: 80px !important;
 }
 
 .home-section {
   position: relative;
-  z-index: -1;
+  z-index: 10;
   /* background-image: var(--image-gradient), url(./Assets/home-bg.jpg); */
   background-image: none;
 
@@ -1649,5 +1666,44 @@ body.dark .resume-section .react-pdf__Page__canvas {
 
   100% {
     transform: translateY(0px);
+  }
+}
+
+/* Animated Oval Background */
+.oval-background {
+  position: absolute;
+  width: 400px;
+  height: 500px;
+  background: linear-gradient(45deg,
+      rgba(79, 70, 229, 0.4),
+      rgba(147, 51, 234, 0.4),
+      rgba(236, 72, 153, 0.4));
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: ovalPulse 6s ease-in-out infinite alternate;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.8;
+}
+
+@keyframes ovalPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9) rotate(0deg);
+    opacity: 0.6;
+    filter: blur(30px);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.1) rotate(5deg);
+    opacity: 0.8;
+    filter: blur(45px) hue-rotate(20deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.0) rotate(-5deg);
+    opacity: 0.7;
+    filter: blur(35px) hue-rotate(-20deg);
   }
 }

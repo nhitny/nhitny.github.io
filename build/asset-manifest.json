@@ -1,29 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.5d0479ae.css",
-    "main.js": "/static/js/main.7cbd637a.js",
+    "main.css": "/static/css/main.f38e4f36.css",
+    "main.js": "/static/js/main.1dc901f6.js",
     "static/js/415.4d6acbeb.chunk.js": "/static/js/415.4d6acbeb.chunk.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
-    "static/media/home-main-nhitny.svg": "/static/media/home-main-nhitny.fa9b2504df6c72387b485dacca985975.svg",
-    "static/media/leaf.png": "/static/media/leaf.ff2616f664c8c0ceab91.png",
-    "static/media/emotion.png": "/static/media/emotion.eabfc16e7a146ab15778.png",
-    "static/media/suicide.png": "/static/media/suicide.9c86cd7138a398c45fa5.png",
-    "static/media/codeEditor.png": "/static/media/codeEditor.1b585492490c8c1cace9.png",
+    "static/media/nhi_chibi.svg": "/static/media/nhi_chibi.c8b99f4e91fbbe66f0c5576bda611945.svg",
+    "static/media/Gemini Certified University Student.pdf": "/static/media/Gemini Certified University Student.d1752b84d2103b35aea4.pdf",
+    "static/media/Gemini Certified Educator.pdf": "/static/media/Gemini Certified Educator.6c57d92b420c7945bca3.pdf",
+    "static/media/Attention Mechanisms and Transformer Models Course.jpeg": "/static/media/Attention Mechanisms and Transformer Models Course.de03c2fcaad03587dff6.jpeg",
+    "static/media/Google Certified Educator Level 1.pdf": "/static/media/Google Certified Educator Level 1.20457e9c8776f37b83b5.pdf",
+    "static/media/AI Agents Fundamentals.png": "/static/media/AI Agents Fundamentals.5ac26652e550f43c6b31.png",
+    "static/media/CV_Nhitny.pdf": "/static/media/CV_Nhitny.d763202631004558e2a4.pdf",
     "static/media/sgu-logo.png": "/static/media/sgu-logo.b8bd97af09d401ebc316.png",
-    "static/media/blog.png": "/static/media/blog.fb8ab7f271a937d5fc01.png",
-    "static/media/avatar-women.svg": "/static/media/avatar-women.899edaaaa1375ac9a35b60d7789f5619.svg",
     "static/media/uit-logo.png": "/static/media/uit-logo.0aed37ef086d015c565e.png",
-    "static/media/chatify.png": "/static/media/chatify.7206044e0b5cdad44726.png",
-    "static/media/Soumyajit_Behera-BIT_MESRA.pdf": "/static/media/Soumyajit_Behera-BIT_MESRA.f31c00c0623443fc6fa3.pdf",
-    "static/media/pre.svg": "/static/media/pre.4410c5baaa673cc131da.svg",
+    "static/media/Gemini Certified Faculty.pdf": "/static/media/Gemini Certified Faculty.9928e400ffc357d0f696.pdf",
+    "static/media/Applications of AI for Anomaly Detection.pdf": "/static/media/Applications of AI for Anomaly Detection.739cd1d3846bdedd6bfa.pdf",
     "index.html": "/index.html",
-    "main.5d0479ae.css.map": "/static/css/main.5d0479ae.css.map",
-    "main.7cbd637a.js.map": "/static/js/main.7cbd637a.js.map",
+    "main.f38e4f36.css.map": "/static/css/main.f38e4f36.css.map",
+    "main.1dc901f6.js.map": "/static/js/main.1dc901f6.js.map",
     "415.4d6acbeb.chunk.js.map": "/static/js/415.4d6acbeb.chunk.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5d0479ae.css",
-    "static/js/main.7cbd637a.js"
+    "static/css/main.f38e4f36.css",
+    "static/js/main.1dc901f6.js"
   ]
 }

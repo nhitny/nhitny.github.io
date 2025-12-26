@@ -1,19 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
 import { Document, Page, pdfjs } from 'react-pdf';
 
 // Setup PDF.js worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `//${window.location.host}/pdf.worker.min.js`;
 
 function EducationCards(props) {
-    const [numPages, setNumPages] = useState(null);
-
-    function onDocumentLoadSuccess({ numPages }) {
-        setNumPages(numPages);
-    }
-
     return (
         <Card className="project-card-view">
             {/* Wrapper div để cố định kích thước media cho tất cả cards */}
@@ -33,7 +27,6 @@ function EducationCards(props) {
                     <a href={props.demoLink} target="_blank" rel="noopener noreferrer" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <Document
                             file={props.imgPath}
-                            onLoadSuccess={onDocumentLoadSuccess}
                             loading={<div style={{ padding: '20px', color: '#000' }}>Loading Preview...</div>}
                             className="d-flex justify-content-center align-items-center"
                         >
