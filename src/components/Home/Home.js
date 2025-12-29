@@ -22,7 +22,7 @@ function Home({ darkMode }) {
         <Particle darkMode={darkMode} />
         <Container className="home-content">
           <Row>
-            <Col md={7} className="home-header">
+            <Col xs={7} md={7} className="home-header">
               <h1 style={{ paddingBottom: 15 }} className="heading">
                 Hi There!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
@@ -35,7 +35,7 @@ function Home({ darkMode }) {
                 <strong className="main-name"> YEN NHI</strong>
               </h1>
 
-              <div style={{ padding: 50, textAlign: "left" }}>
+              <div style={{ padding: 50, textAlign: "left" }} className="terminal-wrapper">
                 <div className="terminal-window">
                   <div className="terminal-header">
                     <div className="terminal-btn red"></div>
@@ -52,7 +52,7 @@ function Home({ darkMode }) {
               </div>
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
+            <Col xs={5} md={5} style={{ paddingBottom: 20 }}>
               <div className="avatar-wrapper" style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center" }}>
                 {/* Oval Background Effect */}
                 <div className="oval-background"></div>

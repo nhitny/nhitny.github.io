@@ -692,6 +692,44 @@ html.dark .theme-icon,
   transform: rotate(20deg);
 }
 
+/* Theme Toggle Button (Mobile - in navbar header) */
+.theme-toggle-btn {
+  background: transparent !important;
+  border: none !important;
+  padding: 0.5rem !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+  color: var(--text-color) !important;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(79, 70, 229, 0.1) !important;
+  border-radius: 8px;
+}
+
+.theme-toggle-btn .theme-icon {
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover .theme-icon {
+  color: #4f46e5 !important;
+  transform: rotate(20deg);
+}
+
+/* Ensure theme icons are visible in both modes */
+html.dark .theme-toggle-btn .theme-icon,
+.dark .theme-toggle-btn .theme-icon {
+  color: #ffffff;
+}
+
+:root .theme-toggle-btn .theme-icon {
+  color: #1f2937;
+}
+
 /* --------- */
 /* Home section */
 /* --------- */
@@ -821,14 +859,82 @@ html.dark .theme-icon,
 
 @media (max-width: 767px) {
   .heading {
-    font-size: 1.8em !important;
-    padding-left: 20px !important;
-    padding-bottom: 10px !important;
+    font-size: 1.5em !important;
+    padding-left: 10px !important;
+    padding-bottom: 5px !important;
   }
 
   .heading-name {
-    font-size: 1.6em !important;
-    padding-left: 20px !important;
+    font-size: 1.3em !important;
+    padding-left: 10px !important;
+  }
+
+  /* Keep 2-column layout on mobile */
+  .terminal-wrapper {
+    padding: 5px !important;
+  }
+
+  .home-header {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+  }
+
+  /* Smaller avatar for mobile 2-column layout */
+  .tech-avatar {
+    max-height: 150px !important;
+  }
+
+  .oval-background {
+    width: 120px !important;
+    height: 150px !important;
+    filter: blur(15px) !important;
+  }
+
+  .avatar-wrapper {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Fix terminal overflow */
+  .terminal-window {
+    margin-top: 15px !important;
+    border-radius: 4px !important;
+    max-width: 100% !important;
+    min-height: 80px !important;
+    width: 100% !important;
+  }
+
+  .terminal-wrapper {
+    padding: 5px !important;
+    margin-right: -10px !important;
+  }
+
+  .terminal-body {
+    padding: 12px !important;
+    font-size: 0.7em !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    min-height: 50px !important;
+  }
+
+  .terminal-title {
+    font-size: 8px !important;
+  }
+
+  .terminal-header {
+    padding: 5px 10px !important;
+  }
+
+  .terminal-btn {
+    width: 8px !important;
+    height: 8px !important;
+    margin-right: 5px !important;
+  }
+
+  /* Reduce typewriter font size */
+  .Typewriter__wrapper {
+    font-size: 0.85em !important;
+    line-height: 1.2 !important;
   }
 }
 

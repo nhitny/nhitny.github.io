@@ -60,6 +60,30 @@ function NavBar() {
           <span className="logo-text">Nhitny.</span>
         </Navbar.Brand>
 
+        {/* Theme Toggle - Always visible in navbar, BEFORE hamburger */}
+        <button
+          onClick={toggleTheme}
+          className="theme-toggle-btn d-md-none"
+          aria-label="Toggle theme"
+          style={{
+            background: 'transparent',
+            border: 'none',
+            padding: '0.5rem',
+            marginLeft: 'auto',
+            marginRight: '0.5rem',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          {theme === "dark" ? (
+            <FiSun className="theme-icon" style={{ fontSize: '1.3rem' }} />
+          ) : (
+            <FiMoon className="theme-icon" style={{ fontSize: '1.3rem' }} />
+          )}
+        </button>
+
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -70,6 +94,7 @@ function NavBar() {
           <span></span>
           <span></span>
         </Navbar.Toggle>
+
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
@@ -132,7 +157,8 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
+            {/* Theme Toggle - Desktop only */}
+            <Nav.Item className="d-none d-md-block">
               <Nav.Link
                 as="button"
                 onClick={toggleTheme}
