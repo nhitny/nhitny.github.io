@@ -798,6 +798,17 @@ html.dark .theme-icon,
   text-align: left;
 }
 
+@media (max-width: 767px) {
+  .home-content {
+    padding: 6rem 0 1rem !important;
+  }
+
+  .home-section {
+    padding-bottom: 20px !important;
+    padding-top: 20px !important;
+  }
+}
+
 .heading {
   font-size: 2.4em !important;
   padding-left: 50px !important;
@@ -806,6 +817,19 @@ html.dark .theme-icon,
 .heading-name {
   font-size: 2.5em !important;
   padding-left: 45px !important;
+}
+
+@media (max-width: 767px) {
+  .heading {
+    font-size: 1.8em !important;
+    padding-left: 20px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .heading-name {
+    font-size: 1.6em !important;
+    padding-left: 20px !important;
+  }
 }
 
 .main-name {
@@ -832,9 +856,10 @@ html.dark .theme-icon,
 
 @media (max-width: 767px) {
   .Typewriter__wrapper {
-    font-size: 1.4em !important;
+    font-size: 1.1em !important;
     font-weight: 500 !important;
-    position: absolute !important;
+    position: relative !important;
+    line-height: 1.4 !important;
   }
 
   .Typewriter__cursor {
@@ -873,6 +898,18 @@ html.dark .theme-icon,
   padding-top: 50px;
   font-size: 1.2em !important;
   text-align: left;
+}
+
+@media (max-width: 767px) {
+  .home-about-body {
+    font-size: 1em !important;
+    padding-top: 30px;
+    text-align: justify;
+  }
+
+  .home-about-description {
+    padding-top: 50px !important;
+  }
 }
 
 .home-about-social {
@@ -1005,6 +1042,23 @@ html.dark .theme-icon,
   padding-left: 25px !important;
   padding-right: 25px !important;
   height: auto !important;
+}
+
+@media (max-width: 767px) {
+  .project-card {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .project-section {
+    padding-top: 100px !important;
+  }
+
+  .project-heading {
+    font-size: 1.8em !important;
+  }
 }
 
 .project-card-view {
@@ -1149,6 +1203,12 @@ html.dark .theme-icon,
   color: var(--text-color) !important;
 }
 
+@media (max-width: 767px) {
+  .about-section {
+    padding-top: 100px !important;
+  }
+}
+
 .tech-icons {
   font-size: 4.5em !important;
   margin: 15px !important;
@@ -1212,6 +1272,16 @@ html.dark .theme-icon,
   /* background-image: var(--section-background-color) !important; */
   color: white !important;
   color: var(--text-color) !important;
+}
+
+@media (max-width: 767px) {
+  .resume-section {
+    padding-top: 90px !important;
+  }
+
+  .resume .resume-title {
+    font-size: 1.5em !important;
+  }
 }
 
 .resume {
@@ -1499,6 +1569,22 @@ body.dark {
   transition: all 0.3s ease;
 }
 
+@media (max-width: 767px) {
+  .terminal-window {
+    margin-top: 10px;
+    border-radius: 6px;
+  }
+
+  .terminal-body {
+    padding: 15px !important;
+    font-size: 0.9em;
+  }
+
+  .terminal-title {
+    font-size: 10px !important;
+  }
+}
+
 /* Light mode terminal adjustment */
 :root .terminal-window {
   background: rgba(255, 255, 255, 0.1);
@@ -1700,6 +1786,22 @@ body.dark .resume-section .react-pdf__Page__canvas {
   opacity: 0.8;
 }
 
+@media (max-width: 767px) {
+  .oval-background {
+    width: 280px;
+    height: 350px;
+    filter: blur(30px);
+  }
+
+  .tech-avatar {
+    max-height: 300px !important;
+  }
+
+  .avatar-wrapper {
+    margin-top: 20px;
+  }
+}
+
 @keyframes ovalPulse {
   0% {
     transform: translate(-50%, -50%) scale(0.9) rotate(0deg);
@@ -1717,5 +1819,184 @@ body.dark .resume-section .react-pdf__Page__canvas {
     transform: translate(-50%, -50%) scale(1.0) rotate(-5deg);
     opacity: 0.7;
     filter: blur(35px) hue-rotate(-20deg);
+  }
+}
+
+/* ========================================
+   🎯 MOBILE TOUCH OPTIMIZATIONS
+   ======================================== */
+
+/* Ensure all interactive elements are touch-friendly */
+@media (max-width: 767px) {
+
+  /* Touch target size */
+  button,
+  a,
+  .btn,
+  .nav-link {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Improve tap highlight */
+  * {
+    -webkit-tap-highlight-color: rgba(79, 70, 229, 0.1);
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Better spacing */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Prevent zoom on input focus (iOS) */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  /* Improve card interactions */
+  .project-card-view,
+  .blog-card-view {
+    transition: transform 0.2s ease !important;
+  }
+
+  .project-card-view:active,
+  .blog-card-view:active {
+    transform: scale(0.98) !important;
+  }
+
+  /* Better button states */
+  .btn-primary:active {
+    transform: scale(0.95) !important;
+  }
+
+  /* Improve social icons */
+  .home-social-icons {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 1.4em !important;
+  }
+
+  /* Better footer spacing */
+  .footer {
+    padding-top: 20px !important;
+    padding-bottom: 15px !important;
+  }
+
+  /* Improve tech icons */
+  .tech-icons {
+    font-size: 3.5em !important;
+  }
+
+  /* Better image handling */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Improve navbar spacing */
+  .navbar {
+    padding: 0.75rem 1rem !important;
+  }
+
+  /* Better wave animation */
+  .wave {
+    display: inline-block;
+    font-size: 1.2em;
+  }
+
+  /* Improve terminal hover on mobile */
+  .terminal-window:hover {
+    transform: none;
+  }
+
+  /* Disable avatar float on mobile for performance */
+  .tech-avatar {
+    animation: none;
+  }
+
+  /* Better grid layout */
+  .row {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  .col,
+  [class*="col-"] {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* Extra small devices (phones in portrait, less than 576px) */
+@media (max-width: 575px) {
+
+  /* Further reduce font sizes */
+  .heading {
+    font-size: 1.5em !important;
+    padding-left: 15px !important;
+  }
+
+  .heading-name {
+    font-size: 1.3em !important;
+    padding-left: 15px !important;
+  }
+
+  .Typewriter__wrapper {
+    font-size: 0.95em !important;
+  }
+
+  /* Reduce padding even more */
+  .home-content {
+    padding: 5rem 0 1rem !important;
+  }
+
+  .terminal-body {
+    padding: 12px !important;
+    font-size: 0.85em;
+  }
+
+  /* Smaller avatar */
+  .tech-avatar {
+    max-height: 250px !important;
+  }
+
+  .oval-background {
+    width: 240px;
+    height: 300px;
+  }
+
+  /* Compact project cards */
+  .project-heading {
+    font-size: 1.5em !important;
+  }
+
+  /* Smaller tech icons */
+  .tech-icons {
+    font-size: 3em !important;
+    margin: 8px !important;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+  .home-content {
+    padding: 4rem 0 1rem !important;
+  }
+
+  .tech-avatar {
+    max-height: 250px !important;
+  }
+
+  .terminal-window {
+    margin-top: 5px;
   }
 }
