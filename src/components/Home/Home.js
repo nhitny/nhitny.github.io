@@ -1,159 +1,313 @@
 import React from "react";
+import { useReveal, SoftBackground } from "../UI/PageShell";
+import AwardCard from "../UI/AwardCard";
+import { Journey, ChapterMark } from "../UI/Journey";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/nhi_chibi.svg";
-// import homeLogo from "../../Assets/home-main-nhitny.svg";
-import Particle from "../Particle";
-
+import { Link } from "react-router-dom";
+import homeLogo from "../../Assets/nhi_chibi.webp";
 import Type from "./Type";
+import AttentionHero from "./AttentionHero";
 import { HiOutlineMail } from "react-icons/hi";
-// import myImg from "../../Assets/avatar-women.svg";
-// import Tilt from "react-parallax-tilt";
-import {
-  AiFillGithub,
-  AiFillInstagram,
-} from "react-icons/ai";
+import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { FiArrowRight, FiArrowUpRight, FiFileText } from "react-icons/fi";
+import {
+  SiPython,
+  SiPytorch,
+  SiTensorflow,
+  SiScikitlearn,
+  SiPandas,
+  SiNumpy,
+  SiReact,
+  SiNextdotjs,
+  SiDocker,
+  SiArduino,
+  SiScratch,
+} from "react-icons/si";
 
-function Home({ darkMode }) {
+const PAPER_URL = "https://aclanthology.org/2025.vlsp-1.6/";
+
+const TOOLBOX = [
+  {
+    group: "AI & NLP",
+    items: [
+      [SiPytorch, "PyTorch"],
+      [null, "Transformers"],
+      [null, "RAG pipelines"],
+      [null, "LLM fine-tuning"],
+      [SiTensorflow, "TensorFlow"],
+    ],
+  },
+  {
+    group: "Data & ML",
+    items: [
+      [SiPython, "Python"],
+      [SiScikitlearn, "scikit-learn"],
+      [SiPandas, "Pandas"],
+      [SiNumpy, "NumPy"],
+    ],
+  },
+  {
+    group: "Build & Play",
+    items: [
+      [SiReact, "React"],
+      [SiNextdotjs, "Next.js"],
+      [SiDocker, "Docker"],
+      [SiArduino, "Arduino"],
+      [SiScratch, "Scratch"],
+    ],
+  },
+];
+
+const WORKS = [
+  {
+    title: "Job & Course RecSys",
+    desc: "Recommends relevant jobs and courses by mining user behaviour and preferences.",
+    tags: ["scikit-learn", "Pandas", "MySQL"],
+    href: "https://github.com/nhitny/Data-Mining-Job-Course-RecSys",
+  },
+  {
+    title: "OCR & Image Retrieval",
+    desc: "Indexes and retrieves images by the text inside them, using OCR and deep learning.",
+    tags: ["OpenCV", "TensorFlow", "Docker"],
+    href: "https://github.com/nhitny/ocr-text-image-retrieval",
+  },
+  {
+    title: "MoCL — NAACL 2024",
+    desc: "Reproduction and experimental study of momentum contrastive learning for NLP.",
+    tags: ["PyTorch", "Contrastive"],
+    href: "https://github.com/nhitny/MoCL-NAACL2024-reproduction",
+  },
+];
+
+const SOCIALS = [
+  [AiFillGithub, "GitHub", "https://github.com/nhitny"],
+  [FaLinkedinIn, "LinkedIn", "https://www.linkedin.com/in/nhitny2802/"],
+  [HiOutlineMail, "Email", "mailto:nhitny.vn@gmail.com"],
+  [AiFillInstagram, "Instagram", "https://www.instagram.com/__yennhitn__/"],
+];
+
+function Home() {
+  const ref = useReveal();
+
   return (
-    <section>
-      <Container fluid className="home-section" id="home">
-        {/* <Particle /> */}
-        <Particle darkMode={darkMode} />
-        <Container className="home-content">
-          <Row>
-            <Col xs={7} md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There!{" "}
-                <span className="wave" role="img" aria-labelledby="wave">
-                  👋🏻
-                </span>
-              </h1>
+    <section className="st-home" ref={ref}>
+      <SoftBackground />
 
-              <h1 className="heading-name tech-font tech-glow">
-                I'M
-                <strong className="main-name"> YEN NHI</strong>
-              </h1>
+      {/* ---------- HERO ---------- */}
+      <Container className="st-hero">
+        <Row className="align-items-center w-100 g-4 mx-0">
+          <Col lg={7} className="order-2 order-lg-1 px-0 px-lg-2">
+            <div className="st-kicker">
+              <span className="st-pulse" />
+              <Type />
+            </div>
 
-              <div style={{ padding: 50, textAlign: "left" }} className="terminal-wrapper">
-                <div className="terminal-window">
-                  <div className="terminal-header">
-                    <div className="terminal-btn red"></div>
-                    <div className="terminal-btn yellow"></div>
-                    <div className="terminal-btn green"></div>
-                    <div className="terminal-title">nhitny@portfolio: ~</div>
-                  </div>
-                  <div className="terminal-body tech-font">
-                    <span style={{ color: '#a855f7', marginRight: '10px' }}>➜</span>
-                    <span style={{ color: '#27c93f', marginRight: '10px' }}>~</span>
-                    <Type />
+            <div className="st-title-row">
+              <h1 className="st-title">
+                Hi, I'm <em>Yến Nhi</em>
+                <span className="st-spark" aria-hidden="true">✦</span>
+              </h1>
+              <div className="st-mini-avatar d-lg-none" aria-hidden="true">
+                <img src={homeLogo} alt="" />
+              </div>
+            </div>
+
+            <p className="st-lead">
+              <b>AI Engineer</b> and Master's student in Computer Science at{" "}
+              <b>UIT – VNUHCM</b>. I work on <b>NLP, RAG and Large Language Models</b> —
+              systems that read, listen and understand people.
+            </p>
+
+            <AttentionHero />
+
+            <div className="st-cta">
+              <Link to="/project" className="st-btn primary">
+                See my work <FiArrowRight />
+              </Link>
+              <a href={PAPER_URL} target="_blank" rel="noreferrer" className="st-btn ghost">
+                <FiFileText /> Read my paper
+              </a>
+              <Link to="/resume" className="st-btn ghost">
+                Résumé
+              </Link>
+            </div>
+          </Col>
+
+          <Col lg={5} className="order-1 order-lg-2 d-none d-lg-block">
+            <div className="st-avatar">
+              <div className="st-avatar-ring" />
+              <div className="st-avatar-blob" />
+              <img src={homeLogo} alt="Illustration of Yến Nhi" />
+              <span className="st-chip c1"><i>●</i>LLMs</span>
+              <span className="st-chip c2"><i>●</i>RAG</span>
+              <span className="st-chip c3"><i>●</i>speech emotion</span>
+              <span className="st-chip c4"><i>●</i>PyTorch</span>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+
+      {/* ---------- FACTS ---------- */}
+      <Container className="st-reveal">
+        <div className="st-facts">
+          <div className="st-fact">
+            <div className="k">studying</div>
+            <div className="v">M.Sc. Computer Science <em>@ UIT</em></div>
+          </div>
+          <div className="st-fact">
+            <div className="k">published</div>
+            <div className="v">DFAT <em>@ VLSP 2025</em></div>
+          </div>
+          <div className="st-fact">
+            <div className="k">award</div>
+            <div className="v">Top 3 <em>@ VLSP 2026</em></div>
+          </div>
+          <div className="st-fact">
+            <div className="k">focus</div>
+            <div className="v">NLP · RAG · <em>LLMs</em></div>
+          </div>
+        </div>
+      </Container>
+
+      <Journey>
+      {/* ---------- ABOUT ---------- */}
+      <Container className="st-section st-chapter st-reveal" id="about">
+        <Row className="g-5">
+          <Col lg={6}>
+            <ChapterMark n="01" name="about me" note="where it all starts" />
+            <h2 className="st-h2">
+              Curious about how machines <em>understand</em> us.
+            </h2>
+            <p className="st-body">
+              I research and build intelligent systems that process human language — from
+              <b> speech emotion recognition</b> to <b>retrieval-augmented generation</b> and
+              <b> LLM fine-tuning</b>. I care about turning research into solutions people can
+              actually use.
+            </p>
+            <p className="st-body">
+              Outside the lab I enjoy creative coding with Arduino and Scratch, mentoring
+              juniors, and keeping up with what's new in AI.
+            </p>
+          </Col>
+          <Col lg={6}>
+            <div className="st-toolbox">
+              {TOOLBOX.map(({ group, items }) => (
+                <div className="st-tool-group" key={group}>
+                  <h4>{group}</h4>
+                  <div className="st-tags">
+                    {items.map(([Icon, name]) => (
+                      <span className="st-tag" key={name}>
+                        {Icon && <Icon />}
+                        {name}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              </div>
-            </Col>
-
-            <Col xs={5} md={5} style={{ paddingBottom: 20 }}>
-              <div className="avatar-wrapper" style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                {/* Oval Background Effect */}
-                <div className="oval-background"></div>
-
-                <img
-                  src={homeLogo}
-                  alt="home pic"
-                  className="img-fluid tech-avatar"
-                  style={{ maxHeight: "450px", position: "relative", zIndex: 1 }}
-                />
-              </div>
-            </Col>
-          </Row>
-        </Container>
+              ))}
+            </div>
+          </Col>
+        </Row>
       </Container>
-      <Container fluid className="home-about-section" id="about">
-        <Container>
-          <Row className="justify-content-center">
-            <Col md={10} lg={8} className="home-about-description">
-              <h1 style={{ fontSize: "2.6em", textAlign: "center" }}>
-                LET ME <span className="purple"> INTRODUCE </span> MYSELF
-              </h1>
-              <p className="home-about-body" style={{ textAlign: "justify" }}>
-                I am an <b className="purple">AI Engineer</b> specializing in <b className="purple">NLP, RAG, and Large Language Models (LLMs)</b>.
-                <br />
-                Currently, I am pursuing my <b className="purple">Master's degree in Computer Science</b> at the <b className="purple">University of Information Technology (UIT) - VNUHCM</b>.
-                <br />
-                <br />
-                My technical journey covers a diverse range of technologies:
-                <br />
-                <i>
-                  🔸 <b className="purple">AI & Data Science: </b> Python, PyTorch, RAG pipelines, and LLM fine-tuning.
-                  <br />
-                  🔸 <b className="purple">Machine Learning: </b> Building and deploying ML models for NLP tasks, including sentiment analysis, text classification, and named entity recognition.
-                  <br />
-                  🔸 <b className="purple">Deep Learning Frameworks: </b> Expertise in TensorFlow and PyTorch for developing neural networks and transformer-based architectures.
-                  <br />
-                  🔸 <b className="purple">Creative Coding & IoT: </b> Experience with <b className="purple">Arduino</b> and <b className="purple">Scratch</b> for interactive projects.
-                </i>
-                <br />
-                <br />
-                I am passionate about researching and building intelligent systems that can process and understand human language, applying AI to solve real-world problems. My work focuses on creating scalable solutions that bridge the gap between cutting-edge research and practical applications.
-                <br />
-                <br />
-                Beyond technical skills, I enjoy collaborating with cross-functional teams, mentoring junior developers, and staying updated with the latest advancements in AI and machine learning.
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12} className="home-about-social">
-              <h1>FIND ME ON</h1>
-              <p>
-                Feel free to <span className="purple">connect </span>with me
-              </p>
-              <ul className="home-about-social-links">
-                <li className="social-icons">
-                  <a
-                    href="https://github.com/nhitny"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="icon-colour  home-social-icons"
-                  >
-                    <AiFillGithub />
-                  </a>
-                </li>
-                <li className="social-icons">
-                  <a
-                    href="mailto:nhitny2802@gmail.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="icon-colour home-social-icons"
-                  >
-                    <HiOutlineMail />
-                  </a>
-                </li>
 
-                <li className="social-icons">
-                  <a
-                    href="https://www.linkedin.com/in/nhitny2802/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="icon-colour  home-social-icons"
-                  >
-                    <FaLinkedinIn />
-                  </a>
-                </li>
-                <li className="social-icons">
-                  <a
-                    href="https://www.instagram.com/__yennhitn__/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="icon-colour home-social-icons"
-                  >
-                    <AiFillInstagram />
-                  </a>
-                </li>
-              </ul>
-            </Col>
-          </Row>
-        </Container>
+      {/* ---------- PUBLICATION ---------- */}
+      <Container className="st-section st-chapter pt-0 st-reveal">
+        <ChapterMark n="02" name="research & awards" note="milestones along the way" />
+        <h2 className="st-h2">Featured <em>research</em></h2>
+        <AwardCard />
+        <article className="st-pub">
+          <div className="st-pub-meta">
+            <span className="st-badge">VLSP 2025</span>
+            <span className="st-badge rose">Speech · NLP</span>
+            <span className="st-badge">ACL Anthology</span>
+          </div>
+          <h3>
+            <b>DFAT</b>: Dual-stage Fusion of Acoustic and Text features for Speech Emotion
+            Recognition
+          </h3>
+          <div className="st-wave" aria-hidden="true">
+            {Array.from({ length: 48 }).map((_, i) => (
+              <span
+                key={i}
+                style={{
+                  height: `${30 + Math.abs(Math.sin(i * 0.55)) * 70}%`,
+                  animationDelay: `${(i % 12) * -0.13}s`,
+                }}
+              />
+            ))}
+          </div>
+          <p className="st-body" style={{ maxWidth: "46rem" }}>
+            A fusion approach that combines what is said with <b>how</b> it is said — audio and
+            text features are merged in two stages to recognise emotion more accurately.
+          </p>
+          <div className="st-cta" style={{ marginTop: 20 }}>
+            <a href={PAPER_URL} target="_blank" rel="noreferrer" className="st-btn primary">
+              <FiFileText /> Paper
+            </a>
+            <a href="https://github.com/nhitny/dfat" target="_blank" rel="noreferrer" className="st-btn ghost">
+              <AiFillGithub /> Code
+            </a>
+          </div>
+        </article>
       </Container>
+
+      {/* ---------- SELECTED WORK ---------- */}
+      <Container className="st-section st-chapter pt-0 st-reveal">
+        <ChapterMark n="03" name="selected work" note="things I've made" />
+        <div className="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-2">
+          <div>
+            <h2 className="st-h2 mb-0">Things I've <em>built</em></h2>
+          </div>
+          <Link to="/project" className="st-btn ghost">
+            All projects <FiArrowRight />
+          </Link>
+        </div>
+        <div className="st-works mt-4">
+          {WORKS.map((w, i) => (
+            <a className="st-work" href={w.href} target="_blank" rel="noreferrer" key={w.title}>
+              <span className="idx">0{i + 1}</span>
+              <h3>{w.title}</h3>
+              <p>{w.desc}</p>
+              <div className="st-tags">
+                {w.tags.map((t) => (
+                  <span className="st-tag" key={t}>{t}</span>
+                ))}
+              </div>
+              <span className="go">
+                View on GitHub <FiArrowUpRight />
+              </span>
+            </a>
+          ))}
+        </div>
+      </Container>
+
+      {/* ---------- CONNECT ---------- */}
+      <Container className="st-section st-chapter st-chapter-last pt-0 st-reveal">
+        <ChapterMark n="04" name="say hi" note="the next chapter could be ours" final />
+        <div className="st-connect">
+          <h2 className="st-h2">
+            Let's build something <em>kind</em> &amp; clever.
+          </h2>
+          <p className="st-body mx-auto" style={{ maxWidth: "32rem" }}>
+            Open to research collaborations, AI engineering work and good conversations about
+            language models.
+          </p>
+          <div className="st-socials">
+            {SOCIALS.map(([Icon, label, href]) => (
+              <a
+                key={label}
+                className="st-social"
+                href={href}
+                target={href.startsWith("mailto") ? undefined : "_blank"}
+                rel="noreferrer"
+              >
+                <Icon /> {label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </Container>
+      </Journey>
     </section>
   );
 }

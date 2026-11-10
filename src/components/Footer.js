@@ -20,7 +20,7 @@ function Footer() {
             <li className="social-icons">
               <a
                 href="https://github.com/nhitny"
-                style={{ color: "white" }}
+               
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -29,8 +29,8 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="mailto:nhitny2802@gmail.com"
-                style={{ color: "white" }}
+                href="mailto:nhitny.vn@gmail.com"
+               
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -40,7 +40,7 @@ function Footer() {
             <li className="social-icons">
               <a
                 href="https://www.linkedin.com/in/nhitny2802/"
-                style={{ color: "white" }}
+               
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -50,7 +50,7 @@ function Footer() {
             <li className="social-icons">
               <a
                 href="https://www.instagram.com/__yennhitn__/"
-                style={{ color: "white" }}
+               
                 target="_blank"
                 rel="noopener noreferrer"
               >

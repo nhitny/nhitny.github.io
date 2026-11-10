@@ -1,52 +1,49 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import Particle from "../Particle";
+import React from "react";
+import { Container } from "react-bootstrap";
+import { FiDownload, FiMail } from "react-icons/fi";
+import PageShell from "../UI/PageShell";
 import pdf from "../../Assets/CV_Nhitny.pdf";
-import { AiOutlineDownload, AiOutlineMail } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-pdfjs.GlobalWorkerOptions.workerSrc = `//${window.location.host}/pdf.worker.min.js`;
+// Pages pre-rendered from CV_Nhitny.pdf so the page loads instantly.
+// If you update the PDF, re-render these two images too.
+import cvPage1 from "../../Assets/previews/CV_Nhitny-p1.webp";
+import cvPage2 from "../../Assets/previews/CV_Nhitny-p2.webp";
+
+const PAGES = [cvPage1, cvPage2];
 
 function ResumeNew() {
-  const [width, setWidth] = useState(1200);
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
-
   return (
-    <div>
-      <Container fluid className="resume-section">
-        <Particle />
-        <Row style={{ justifyContent: "center", position: "relative", gap: "15px" }}>
-          <Button
-            className="download-cv-btn"
-            href={pdf}
-            target="_blank"
-            style={{ maxWidth: "250px" }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
+    <PageShell
+      label="~/resume"
+      title="My"
+      accent="résumé."
+      subtitle="The short version of my story — education, research and teaching."
+    >
+      <Container className="st-section pt-0">
+        <div className="st-cta st-resume-cta">
+          <a href={pdf} target="_blank" rel="noreferrer" className="st-btn primary">
+            <FiDownload /> Download CV
+          </a>
+          <a href="mailto:nhitny.vn@gmail.com" className="st-btn ghost">
+            <FiMail /> Contact me
+          </a>
+        </div>
 
-          <Button
-            className="download-cv-btn"
-            href="mailto:nhitny2802@gmail.com"
-            style={{ maxWidth: "250px" }}
-          >
-            <AiOutlineMail />
-            &nbsp;Contact Me
-          </Button>
-        </Row>
-
-        <Row className="resume">
-          <Document file={pdf} className="d-flex justify-content-center">
-            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
-          </Document>
-        </Row>
+        <div className="st-paper">
+          {PAGES.map((src, i) => (
+            <a key={src} href={pdf} target="_blank" rel="noreferrer" className="st-paper-page">
+              <img
+                src={src}
+                alt={`Résumé of Truong Nguyen Yen Nhi — page ${i + 1}`}
+                width="1600"
+                height="2070"
+                loading={i === 0 ? "eager" : "lazy"}
+                decoding="async"
+              />
+            </a>
+          ))}
+        </div>
       </Container>
-    </div>
+    </PageShell>
   );
 }
 

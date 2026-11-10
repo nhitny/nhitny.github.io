@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Preloader from "../src/components/Pre";
+import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 // import About from "./components/About/About";
@@ -7,10 +6,6 @@ import Education from "./components/Education/Education";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume/ResumeNew";
-
-
-
-
 
 import {
   HashRouter as Router,
@@ -22,27 +17,31 @@ import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./redesign.css";
 
 function App() {
-  const [load, updateLoad] = useState(true);
-
+  // fade out the intro loader that lives in public/index.html
   useEffect(() => {
-    const timer = setTimeout(() => {
-      updateLoad(false);
-    }, 1200);
-
-    return () => clearTimeout(timer);
+    const el = document.getElementById("st-loader");
+    if (!el) return undefined;
+    const MIN_VISIBLE_MS = 1500;
+    const wait = Math.max(0, MIN_VISIBLE_MS - performance.now());
+    let removeTimer;
+    const hideTimer = setTimeout(() => {
+      el.classList.add("is-done");
+      clearInterval(window.__stlTimer);
+      removeTimer = setTimeout(() => el.remove(), 700);
+    }, wait);
+    return () => {
+      clearTimeout(hideTimer);
+      clearTimeout(removeTimer);
+    };
   }, []);
-
-
-
 
   return (
     <Router>
-      <Preloader load={load} />
 
-
-      <div className="App" id={load ? "no-scroll" : "scroll"}>
+      <div className="App">
         <div id="top-loading-bar"></div>
         <Navbar />
         <ScrollToTop />

@@ -54,5 +54,8 @@
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
+  },
+  "overrides": {
+    "memfs": "3.5.3"
   }
 }
