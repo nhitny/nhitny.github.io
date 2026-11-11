@@ -1,6 +1,7 @@
 import React from "react";
 import { useReveal, SoftBackground } from "../UI/PageShell";
-import AwardCard from "../UI/AwardCard";
+import AwardList from "../UI/AwardCard";
+import ALL_PROJECTS from "../../data/projects.json";
 import { Journey, ChapterMark } from "../UI/Journey";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -25,7 +26,7 @@ import {
   SiScratch,
 } from "react-icons/si";
 
-const PAPER_URL = "https://aclanthology.org/2025.vlsp-1.6/";
+const PAPER_URL = (ALL_PROJECTS.find((p) => p.featured && p.paper) || {}).paper || "https://aclanthology.org/2025.vlsp-1.6/";
 
 const TOOLBOX = [
   {
@@ -59,26 +60,12 @@ const TOOLBOX = [
   },
 ];
 
-const WORKS = [
-  {
-    title: "Job & Course RecSys",
-    desc: "Recommends relevant jobs and courses by mining user behaviour and preferences.",
-    tags: ["scikit-learn", "Pandas", "MySQL"],
-    href: "https://github.com/nhitny/Data-Mining-Job-Course-RecSys",
-  },
-  {
-    title: "OCR & Image Retrieval",
-    desc: "Indexes and retrieves images by the text inside them, using OCR and deep learning.",
-    tags: ["OpenCV", "TensorFlow", "Docker"],
-    href: "https://github.com/nhitny/ocr-text-image-retrieval",
-  },
-  {
-    title: "MoCL — NAACL 2024",
-    desc: "Reproduction and experimental study of momentum contrastive learning for NLP.",
-    tags: ["PyTorch", "Contrastive"],
-    href: "https://github.com/nhitny/MoCL-NAACL2024-reproduction",
-  },
-];
+const FEATURED = ALL_PROJECTS.find((p) => p.featured);
+
+// first three non-featured projects from src/data/projects.json
+const WORKS = ALL_PROJECTS.filter((p) => !p.featured)
+  .slice(0, 3)
+  .map((p) => ({ title: p.title, desc: p.desc, tags: (p.tech || []).slice(0, 3), href: p.code || p.demo || "#" }));
 
 const SOCIALS = [
   [AiFillGithub, "GitHub", "https://github.com/nhitny"],
@@ -214,41 +201,48 @@ function Home() {
       <Container className="st-section st-chapter pt-0 st-reveal">
         <ChapterMark n="02" name="research & awards" note="milestones along the way" />
         <h2 className="st-h2">Featured <em>research</em></h2>
-        <AwardCard />
-        <article className="st-pub">
-          <div className="st-pub-meta">
-            <span className="st-badge">VLSP 2025</span>
-            <span className="st-badge rose">Speech · NLP</span>
-            <span className="st-badge">ACL Anthology</span>
-          </div>
-          <h3>
-            <b>DFAT</b>: Dual-stage Fusion of Acoustic and Text features for Speech Emotion
-            Recognition
-          </h3>
-          <div className="st-wave" aria-hidden="true">
-            {Array.from({ length: 48 }).map((_, i) => (
-              <span
-                key={i}
-                style={{
-                  height: `${30 + Math.abs(Math.sin(i * 0.55)) * 70}%`,
-                  animationDelay: `${(i % 12) * -0.13}s`,
-                }}
-              />
-            ))}
-          </div>
-          <p className="st-body" style={{ maxWidth: "46rem" }}>
-            A fusion approach that combines what is said with <b>how</b> it is said — audio and
-            text features are merged in two stages to recognise emotion more accurately.
-          </p>
-          <div className="st-cta" style={{ marginTop: 20 }}>
-            <a href={PAPER_URL} target="_blank" rel="noreferrer" className="st-btn primary">
-              <FiFileText /> Paper
-            </a>
-            <a href="https://github.com/nhitny/dfat" target="_blank" rel="noreferrer" className="st-btn ghost">
-              <AiFillGithub /> Code
-            </a>
-          </div>
-        </article>
+        <AwardList limit={1} />
+        {FEATURED && (
+          <article className="st-pub">
+            <div className="st-pub-meta">
+              {FEATURED.venue && <span className="st-badge">{FEATURED.venue}</span>}
+              {(FEATURED.tech || []).slice(0, 2).map((t) => (
+                <span className="st-badge rose" key={t}>{t}</span>
+              ))}
+              {FEATURED.paper && <span className="st-badge">Paper</span>}
+            </div>
+            <h3>
+              <b>{FEATURED.title}</b>
+              {FEATURED.full && <>: {FEATURED.full}</>}
+            </h3>
+            <div className="st-wave" aria-hidden="true">
+              {Array.from({ length: 48 }).map((_, i) => (
+                <span
+                  key={i}
+                  style={{
+                    height: `${30 + Math.abs(Math.sin(i * 0.55)) * 70}%`,
+                    animationDelay: `${(i % 12) * -0.13}s`,
+                  }}
+                />
+              ))}
+            </div>
+            <p className="st-body" style={{ maxWidth: "46rem" }}>
+              {FEATURED.desc}
+            </p>
+            <div className="st-cta" style={{ marginTop: 20 }}>
+              {FEATURED.paper && (
+                <a href={FEATURED.paper} target="_blank" rel="noreferrer" className="st-btn primary">
+                  <FiFileText /> Paper
+                </a>
+              )}
+              {FEATURED.code && (
+                <a href={FEATURED.code} target="_blank" rel="noreferrer" className="st-btn ghost">
+                  <AiFillGithub /> Code
+                </a>
+              )}
+            </div>
+          </article>
+        )}
       </Container>
 
       {/* ---------- SELECTED WORK ---------- */}

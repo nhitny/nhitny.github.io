@@ -1,0 +1,61 @@
+[
+  {
+    "id": "generative-ai-foundations",
+    "title": "Generative AI Foundations",
+    "issuer": "Pearson · Certiport",
+    "date": "2026-06-20",
+    "file": "/content/certs/generative-ai-foundations.webp",
+    "preview": "/content/certs/generative-ai-foundations.webp",
+    "note": "ID number on the original certificate is redacted"
+  },
+  {
+    "id": "ai-anomaly-detection",
+    "title": "Applications of AI for Anomaly Detection",
+    "issuer": "NVIDIA",
+    "file": "/content/certs/ai-anomaly-detection.pdf",
+    "preview": "/content/certs/ai-anomaly-detection.webp"
+  },
+  {
+    "id": "ai-agents-fundamentals",
+    "title": "AI Agents Fundamentals",
+    "issuer": "Hugging Face",
+    "file": "/content/certs/ai-agents-fundamentals.png",
+    "preview": "/content/certs/ai-agents-fundamentals.webp"
+  },
+  {
+    "id": "attention-transformers",
+    "title": "Attention Mechanisms and Transformer Models",
+    "issuer": "Simplilearn",
+    "file": "/content/certs/attention-transformers.jpeg",
+    "preview": "/content/certs/attention-transformers.webp"
+  },
+  {
+    "id": "gemini-educator",
+    "title": "Gemini Certified Educator",
+    "issuer": "Google for Education",
+    "date": "2025-12-22",
+    "file": "/content/certs/gemini-educator.pdf",
+    "preview": "/content/certs/gemini-educator.webp"
+  },
+  {
+    "id": "gemini-faculty",
+    "title": "Gemini Certified Faculty",
+    "issuer": "Google for Education",
+    "file": "/content/certs/gemini-faculty.pdf",
+    "preview": "/content/certs/gemini-faculty.webp"
+  },
+  {
+    "id": "gemini-student",
+    "title": "Gemini Certified University Student",
+    "issuer": "Google for Education",
+    "file": "/content/certs/gemini-student.pdf",
+    "preview": "/content/certs/gemini-student.webp"
+  },
+  {
+    "id": "google-educator-l1",
+    "title": "Google Certified Educator Level 1",
+    "issuer": "Google for Education",
+    "file": "/content/certs/google-educator-l1.pdf",
+    "preview": "/content/certs/google-educator-l1.webp"
+  }
+]

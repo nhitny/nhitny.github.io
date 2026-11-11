@@ -1,0 +1,27 @@
+[
+  {
+    "id": "uit-msc",
+    "title": "Master of Computer Science",
+    "school": "University of Information Technology — VNU-HCM",
+    "time": "Dec 2024 – Present",
+    "current": true,
+    "website": "https://www.uit.edu.vn",
+    "logo": "/content/logos/uit.png",
+    "points": [
+      "Specialization in Natural Language Processing (NLP)",
+      "Research orientation in language models and generative AI"
+    ]
+  },
+  {
+    "id": "sgu-eng",
+    "title": "Engineer in Information Technology (High-Quality Program)",
+    "school": "Saigon University",
+    "time": "2018 – 2023",
+    "website": "https://www.sgu.edu.vn/",
+    "logo": "/content/logos/sgu.png",
+    "points": [
+      "Studied Data Structures, Algorithms, Software Engineering",
+      "Completed projects in Web, Mobile and Backend Development"
+    ]
+  }
+]

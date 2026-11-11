@@ -3,62 +3,15 @@ import { Container } from "react-bootstrap";
 import { FiArrowUpRight, FiExternalLink } from "react-icons/fi";
 import PageShell from "../UI/PageShell";
 import { Journey, ChapterMark } from "../UI/Journey";
-import uitLogo from "../../Assets/Educations/uit-logo.png";
-import sguLogo from "../../Assets/Educations/sgu-logo.png";
-import certAIAnomaly from "../../Assets/Educations/Applications of AI for Anomaly Detection.pdf";
-import certAIAgents from "../../Assets/Educations/AI Agents Fundamentals.png";
-import certAttention from "../../Assets/Educations/Attention Mechanisms and Transformer Models Course.jpeg";
-import certGeminiEducator from "../../Assets/Educations/Gemini Certified Educator.pdf";
-import certGeminiFaculty from "../../Assets/Educations/Gemini Certified Faculty.pdf";
-import certGeminiStudent from "../../Assets/Educations/Gemini Certified University Student.pdf";
-import certGoogleEducator from "../../Assets/Educations/Google Certified Educator Level 1.pdf";
-// lightweight pre-rendered previews (the link still opens the original file)
-import pvAIAnomaly from "../../Assets/previews/Applications of AI for Anomaly Detection.webp";
-import pvAIAgents from "../../Assets/previews/AI Agents Fundamentals.webp";
-import pvAttention from "../../Assets/previews/Attention Mechanisms and Transformer Models Course.webp";
-import pvGeminiEducator from "../../Assets/previews/Gemini Certified Educator.webp";
-import pvGeminiFaculty from "../../Assets/previews/Gemini Certified Faculty.webp";
-import pvGeminiStudent from "../../Assets/previews/Gemini Certified University Student.webp";
-import pvGoogleEducator from "../../Assets/previews/Google Certified Educator Level 1.webp";
-// the ID number printed on the original certificate is redacted in this image
-import certGenAI from "../../Assets/previews/Generative AI Foundations.webp";
+// content lives in src/data/*.json and is edited from /admin
+import DEGREES from "../../data/degrees.json";
+import CERTS from "../../data/certificates.json";
 
-const DEGREES = [
-  {
-    logo: uitLogo,
-    title: "Master of Computer Science",
-    school: "University of Information Technology — VNU-HCM",
-    time: "Dec 2024 – Present",
-    current: true,
-    website: "https://www.uit.edu.vn",
-    points: [
-      "Specialization in Natural Language Processing (NLP)",
-      "Research orientation in language models and generative AI",
-    ],
-  },
-  {
-    logo: sguLogo,
-    title: "Engineer in Information Technology (High-Quality Program)",
-    school: "Saigon University",
-    time: "2018 – 2023",
-    website: "https://www.sgu.edu.vn/",
-    points: [
-      "Studied Data Structures, Algorithms, Software Engineering",
-      "Completed projects in Web, Mobile and Backend Development",
-    ],
-  },
-];
-
-const CERTS = [
-  { file: certGenAI, preview: certGenAI, title: "Generative AI Foundations", issuer: "Pearson · Certiport", isNew: true },
-  { file: certAIAnomaly, preview: pvAIAnomaly, title: "Applications of AI for Anomaly Detection", issuer: "NVIDIA" },
-  { file: certAIAgents, preview: pvAIAgents, title: "AI Agents Fundamentals", issuer: "Hugging Face" },
-  { file: certAttention, preview: pvAttention, title: "Attention Mechanisms and Transformer Models", issuer: "Simplilearn" },
-  { file: certGeminiEducator, preview: pvGeminiEducator, title: "Gemini Certified Educator", issuer: "Google for Education" },
-  { file: certGeminiFaculty, preview: pvGeminiFaculty, title: "Gemini Certified Faculty", issuer: "Google for Education" },
-  { file: certGeminiStudent, preview: pvGeminiStudent, title: "Gemini Certified University Student", issuer: "Google for Education" },
-  { file: certGoogleEducator, preview: pvGoogleEducator, title: "Google Certified Educator Level 1", issuer: "Google for Education" },
-];
+const isRecent = (date) => {
+  if (!date) return false;
+  const d = new Date(date);
+  return !Number.isNaN(d.getTime()) && Date.now() - d.getTime() < 1000 * 60 * 60 * 24 * 365;
+};
 
 function Education() {
   return (
@@ -74,9 +27,9 @@ function Education() {
         <ChapterMark n="01" name="degrees" note="the foundations" />
         <div className="st-timeline">
           {DEGREES.map((d) => (
-            <article className="st-degree" key={d.title}>
+            <article className="st-degree" key={d.id || d.title}>
               <div className="st-degree-logo">
-                <img src={d.logo} alt={`${d.school} logo`} />
+                {d.logo ? <img src={d.logo} alt={`${d.school} logo`} /> : <span className="st-degree-initial">{(d.school || "?").charAt(0)}</span>}
               </div>
               <div className="st-degree-body">
                 <div className="st-degree-top">
@@ -88,13 +41,15 @@ function Education() {
                 <h3>{d.title}</h3>
                 <p className="st-degree-school">{d.school}</p>
                 <ul className="st-points">
-                  {d.points.map((p) => (
+                  {(d.points || []).map((p) => (
                     <li key={p}>{p}</li>
                   ))}
                 </ul>
-                <a href={d.website} target="_blank" rel="noreferrer" className="st-link">
-                  Visit website <FiArrowUpRight />
-                </a>
+                {d.website && (
+                  <a href={d.website} target="_blank" rel="noreferrer" className="st-link">
+                    Visit website <FiArrowUpRight />
+                  </a>
+                )}
               </div>
             </article>
           ))}
@@ -109,14 +64,14 @@ function Education() {
         </h2>
         <div className="st-certs">
           {CERTS.map((c) => (
-            <a className="st-cert" href={c.file} target="_blank" rel="noreferrer" key={c.title}>
+            <a className="st-cert" href={c.file || c.preview} target="_blank" rel="noreferrer" key={c.id || c.title}>
               <div className="st-cert-preview">
                 <img src={c.preview} alt={`${c.title} certificate`} loading="lazy" decoding="async" />
               </div>
               <div className="st-cert-body">
                 <span className="st-cert-issuer mono">
                   {c.issuer}
-                  {c.isNew && <span className="st-new">2026</span>}
+                  {isRecent(c.date) && <span className="st-new">new</span>}
                 </span>
                 <h3>{c.title}</h3>
                 <span className="go">

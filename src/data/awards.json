@@ -1,0 +1,11 @@
+[
+  {
+    "id": "vlsp-2026-sqa",
+    "rank": "Top 3",
+    "event": "VLSP 2026",
+    "task": "Task 3 · Speech Quality Assessment",
+    "desc": "Reference-free speech quality assessment: predict an overall quality score (1–5) for degraded recordings and detect and localise what went wrong — noise, distortion and unnatural pauses.",
+    "tags": ["Speech", "Audio"],
+    "url": "https://vlsp.org.vn/vlsp2026/eval/sqa"
+  }
+]

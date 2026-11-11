@@ -1,0 +1,42 @@
+[
+  {
+    "id": "dfat",
+    "title": "DFAT",
+    "full": "Dual-stage Fusion of Acoustic and Text features for Speech Emotion Recognition",
+    "desc": "A novel approach that combines audio and text features in two fusion stages to recognise emotion in speech more accurately. Built with Python and PyTorch.",
+    "venue": "VLSP 2025",
+    "featured": true,
+    "tech": ["Python", "PyTorch", "Audio", "NumPy"],
+    "code": "https://github.com/nhitny/dfat",
+    "paper": "https://aclanthology.org/2025.vlsp-1.6/"
+  },
+  {
+    "id": "recsys",
+    "title": "Job & Course RecSys",
+    "desc": "A recommendation system that suggests relevant jobs and courses using data mining — analysing user behaviour and preferences.",
+    "tech": ["Python", "scikit-learn", "Pandas", "MySQL"],
+    "code": "https://github.com/nhitny/Data-Mining-Job-Course-RecSys"
+  },
+  {
+    "id": "ocr-retrieval",
+    "title": "OCR & Image Retrieval",
+    "desc": "Indexes and retrieves images by the text inside them, using OCR with OpenCV and deep learning models for accurate extraction.",
+    "tech": ["Python", "OpenCV", "TensorFlow", "Docker"],
+    "code": "https://github.com/nhitny/ocr-text-image-retrieval"
+  },
+  {
+    "id": "mocl",
+    "title": "MoCL — NAACL 2024",
+    "desc": "Reproduction and experimental study of the MoCL paper (NAACL 2024), exploring contrastive learning frameworks for NLP tasks.",
+    "tech": ["Python", "PyTorch", "NumPy"],
+    "code": "https://github.com/nhitny/MoCL-NAACL2024-reproduction"
+  },
+  {
+    "id": "blog",
+    "title": "Personal Blog",
+    "desc": "My blogging platform for sharing notes on AI and engineering — a rich-text editor, comments, likes and math rendering.",
+    "tech": ["Next.js", "React", "Firebase"],
+    "code": "https://github.com/nhitny/nhitny-blogs",
+    "demo": "https://nhitny-blogs.vercel.app"
+  }
+]

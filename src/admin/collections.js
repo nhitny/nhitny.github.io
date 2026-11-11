@@ -1,0 +1,70 @@
+// What the admin can edit. Each collection is one JSON array file in the repo.
+// Field types: text, textarea, date, url, bool, list (comma separated),
+// lines (one per line), media (image/PDF → WebP preview), logo (small image).
+
+export const COLLECTIONS = [
+  {
+    key: "certificates",
+    label: "Chứng chỉ",
+    noun: "chứng chỉ",
+    path: "src/data/certificates.json",
+    assetDir: "content/certs",
+    fields: [
+      { name: "title", label: "Tên chứng chỉ", type: "text", required: true, placeholder: "Generative AI Foundations" },
+      { name: "issuer", label: "Đơn vị cấp", type: "text", placeholder: "Pearson · Certiport" },
+      { name: "date", label: "Ngày cấp", type: "date" },
+      { name: "media", label: "File chứng chỉ (ảnh hoặc PDF)", type: "media", required: true },
+    ],
+    summary: (i) => ({ title: i.title, sub: [i.issuer, i.date].filter(Boolean).join(" · "), thumb: i.preview }),
+  },
+  {
+    key: "awards",
+    label: "Thành tích",
+    noun: "thành tích",
+    path: "src/data/awards.json",
+    fields: [
+      { name: "rank", label: "Thứ hạng", type: "text", placeholder: "Top 3" },
+      { name: "event", label: "Cuộc thi / sự kiện", type: "text", required: true, placeholder: "VLSP 2026" },
+      { name: "task", label: "Hạng mục", type: "text", placeholder: "Task 3 · Speech Quality Assessment" },
+      { name: "desc", label: "Mô tả ngắn", type: "textarea" },
+      { name: "tags", label: "Nhãn (cách nhau bằng dấu phẩy)", type: "list", placeholder: "Speech, Audio" },
+      { name: "url", label: "Link", type: "url" },
+    ],
+    summary: (i) => ({ title: [i.rank, i.event].filter(Boolean).join(" · "), sub: i.task }),
+  },
+  {
+    key: "projects",
+    label: "Dự án",
+    noun: "dự án",
+    path: "src/data/projects.json",
+    fields: [
+      { name: "title", label: "Tên dự án", type: "text", required: true },
+      { name: "full", label: "Tên đầy đủ (vd: tên paper)", type: "text" },
+      { name: "desc", label: "Mô tả", type: "textarea", required: true },
+      { name: "venue", label: "Nơi công bố (nếu có)", type: "text", placeholder: "VLSP 2025" },
+      { name: "tech", label: "Công nghệ (cách nhau bằng dấu phẩy)", type: "list", placeholder: "Python, PyTorch" },
+      { name: "code", label: "Link GitHub", type: "url" },
+      { name: "paper", label: "Link paper", type: "url" },
+      { name: "demo", label: "Link demo", type: "url" },
+      { name: "featured", label: "Đưa lên mục nổi bật", type: "bool" },
+    ],
+    summary: (i) => ({ title: i.title, sub: [i.featured ? "★ nổi bật" : "", (i.tech || []).join(", ")].filter(Boolean).join(" · ") }),
+  },
+  {
+    key: "degrees",
+    label: "Bằng cấp",
+    noun: "bằng cấp",
+    path: "src/data/degrees.json",
+    assetDir: "content/logos",
+    fields: [
+      { name: "title", label: "Tên bằng", type: "text", required: true },
+      { name: "school", label: "Trường", type: "text", required: true },
+      { name: "time", label: "Thời gian", type: "text", placeholder: "2018 – 2023" },
+      { name: "current", label: "Đang học", type: "bool" },
+      { name: "website", label: "Website trường", type: "url" },
+      { name: "points", label: "Điểm nổi bật (mỗi dòng một ý)", type: "lines" },
+      { name: "logo", label: "Logo trường", type: "logo" },
+    ],
+    summary: (i) => ({ title: i.title, sub: [i.school, i.time].filter(Boolean).join(" · "), thumb: i.logo }),
+  },
+];
